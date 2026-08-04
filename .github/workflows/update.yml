@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs every 30 minutes (UTC). Adjust as you like.
     # Cron syntax: minute hour day month weekday
-    - cron: "58 * * * *"
+    - cron: "48 * * * *"
   workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
 
 permissions:
