@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climb Challenge — Ranked Leaderboard</title>
+<style>
+  :root {
+    --bg: #05070d;
+    --row-bg: #0a0a0a;
+    --border: #ffffff;
+    --text-main: #e6e6e6;
+    --text-sub: #b8b8b8;
+    --orange: #f0a030;
+    --green: #3ec95f;
+    --red: #e05a5a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0c3215 0%, #34220a 50%, #0a0d14 100%);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    padding: 50px 24px 70px;
+  }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+  }
+
+  .title-icon {
+    width: 350px;
+    height: 220px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .title-text {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 46px;
+    margin: 0px 0;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  h1 .climb { color: var(--orange); }
+  h1 .challenge { color: var(--green); }
+
+  .subtitle {
+    color: #cfcfcf;
+    margin-top: 15px;
+    font-size: 24px;
+  }
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: var(--row-bg);
+    border-radius: 999px;
+    border: 3px solid var(--border);
+    padding: 14px 32px 14px 16px;
+  }
+
+  .badge-wrap {
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--row-bg);
+  }
+
+  .badge {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .name {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rank-line {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-sub);
+    margin-top: 4px;
+  }
+
+  .rank-icon-wrap {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .rank-icon {
+    display: block;
+    width: 250%;
+    height: 250%;
+    object-fit: fill;
+    margin-left: -160%;
+    margin-top: -40%;
+  }
+
+  .stats {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .lp-gained {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .lp-gained.positive .lp-value { color: var(--green); }
+  .lp-gained.negative .lp-value { color: var(--red); }
+
+  .record {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-sub);
+    margin-top: 4px;
+  }
+
+  footer {
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 12px;
+    margin-top: 36px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="header-inner">
+        <!-- Paste your 1024x1024 logo/image URL below -->
+        <img class="title-icon" src="https://i.imgur.com/p68JQ6b.png" alt="Logo" />
+        <div class="title-text">
+          <h1><span class="climb">SUMMER 2026</span> </h1>
+          <h1> <span class="challenge">CLIMB CHALLENGE</span></h1>
+          <p class="subtitle">Ranked Solo/Duo · LP Gain Leaderboard</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="board" id="board"></div>
+
+    <footer>Last updated: <span id="updated"></span></footer>
+  </div>
+
+<script>
+  // Fake data for now — swap this out for real data from your Python file
+  // profileIconId is the player's summoner icon ID (from the Riot API / your data source)
+  const players = [
+    { time: null, riotId: "2second#false", profileIconId: 6943, tier: "Master", division: 1, lp: 58, lpGained: -100, wins: 0, losses: 0 },
+    { time: null, riotId: "Arya#Nova", profileIconId: 7085, tier: "Master", division: 1, lp: 1001, lpGained: 0, wins: 0, losses: 0 },
+    { time: null, riotId: "Eyren#Eyren", profileIconId: 7084, tier: "Emerald", division: 4, lp: 59, lpGained: 0, wins: 0, losses: 0 },
+    { time: null, riotId: "bitsofcool#yuumi", profileIconId: 4414, tier: "Platinum", division: 4, lp: 20, lpGained: 19, wins: 1, losses: 0 },
+    { time: null, riotId: "yoshi#4484", profileIconId: 6622, tier: "Platinum", division: 3, lp: 65, lpGained: 18, wins: 1, losses: 0 },
+    ];
+
+  // Community Dragon serves the full profile icon set (more complete than Data Dragon)
+  function profileIconUrl(id) {
+    return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${id}.jpg`;
+  }
+
+  // Paste your 500x500 rank tier emblem URLs here (one per tier)
+  const tierImages = {
+    Iron:        "https://static.wikia.nocookie.net/leagueoflegends/images/f/f8/Season_2023_-_Iron.png/revision/latest?cb=20231007195831",
+    Bronze:      "https://static.wikia.nocookie.net/leagueoflegends/images/c/cb/Season_2023_-_Bronze.png/revision/latest?cb=20231007195824",
+    Silver:      "https://static.wikia.nocookie.net/leagueoflegends/images/c/c4/Season_2023_-_Silver.png/revision/latest?cb=20231007195834",
+    Gold:        "https://static.wikia.nocookie.net/leagueoflegends/images/7/78/Season_2023_-_Gold.png/revision/latest?cb=20231007195829",
+    Platinum:    "https://static.wikia.nocookie.net/leagueoflegends/images/b/bd/Season_2023_-_Platinum.png/revision/latest?cb=20231007195833",
+    Emerald:     "https://static.wikia.nocookie.net/leagueoflegends/images/4/4b/Season_2023_-_Emerald.png/revision/latest?cb=20231007195827",
+    Diamond:     "https://static.wikia.nocookie.net/leagueoflegends/images/3/37/Season_2023_-_Diamond.png/revision/latest?cb=20231007195826",
+    Master:      "https://static.wikia.nocookie.net/leagueoflegends/images/d/d5/Season_2023_-_Master.png/revision/latest?cb=20231007195832",
+    Grandmaster: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Season_2023_-_Grandmaster.png/revision/latest?cb=20231007195830",
+    Challenger:  "https://static.wikia.nocookie.net/leagueoflegends/images/1/14/Season_2023_-_Challenger.png/revision/latest?cb=20231007195825",
+  };
+
+  function profileImg(p) {
+    const url = profileIconUrl(p.profileIconId);
+    return `<div class="badge-wrap"><img class="badge" src="${url}" alt="${p.riotId}" /></div>`;
+  }
+
+  function rankIconImg(tier) {
+    const url = tierImages[tier] || "";
+    return `<div class="rank-icon-wrap"><img class="rank-icon" src="${url}" alt="${tier}" /></div>`;
+  }
+
+  function formatRank(p) {
+    return p.division ? `${p.tier} ${p.division} - ${p.lp} LP` : `${p.tier} - ${p.lp} LP`;
+  }
+
+  const board = document.getElementById("board");
+  players
+    .sort((a, b) => b.lpGained - a.lpGained)
+    .forEach((p) => {
+      const winRate = Math.round((p.wins / (p.wins + p.losses)) * 100);
+      const gainedClass = p.lpGained > 0 ? "positive" : (p.lpGained < 0 ? "negative" : "");
+      const gainedSign = p.lpGained > 0 ? "+" : "";
+
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML = `
+        ${profileImg(p)}
+        <div class="info">
+          <div class="name">${p.riotId}</div>
+          <div class="rank-line">${formatRank(p)}</div>
+        </div>
+        <div class="stats">
+          <div class="lp-gained ${gainedClass}">
+            ${rankIconImg(p.tier)}
+            <span class="lp-value">LP Gained: ${gainedSign}${p.lpGained}</span>
+          </div>
+          <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
+        </div>
+      `;
+      board.appendChild(row);
+    });
+
+  document.getElementById("updated").textContent = new Date().toLocaleString();
+</script>
+</body>
+</html>
