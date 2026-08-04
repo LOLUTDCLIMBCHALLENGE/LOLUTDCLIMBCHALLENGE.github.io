@@ -196,19 +196,52 @@
 <script>
   // Fake data for now — swap this out for real data from your Python file
   // profileIconId is the player's summoner icon ID (from the Riot API / your data source)
-  const players = [
-    { time: null, riotId: "2second#false", profileIconId: 6943, tier: "Master", division: 1, lp: 58, lpGained: -100, wins: 0, losses: 0 },
-    { time: null, riotId: "Arya#Nova", profileIconId: 7085, tier: "Master", division: 1, lp: 1001, lpGained: 0, wins: 0, losses: 0 },
-    { time: null, riotId: "Eyren#Eyren", profileIconId: 7084, tier: "Emerald", division: 4, lp: 59, lpGained: 0, wins: 0, losses: 0 },
-    { time: null, riotId: "bitsofcool#yuumi", profileIconId: 4414, tier: "Platinum", division: 4, lp: 20, lpGained: 19, wins: 1, losses: 0 },
-    { time: null, riotId: "yoshi#4484", profileIconId: 6622, tier: "Platinum", division: 3, lp: 65, lpGained: 18, wins: 1, losses: 0 },
-    ];
 
   // Community Dragon serves the full profile icon set (more complete than Data Dragon)
   function profileIconUrl(id) {
     return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${id}.jpg`;
   }
 
+  // Fetch live data instead of using hardcoded players
+  fetch('data/data.json')
+    .then(response => response.json())
+    .then(data => {
+      const players = data.players;
+      const board = document.getElementById("board");
+  
+      players
+        .sort((a, b) => b.lpGained - a.lpGained)
+        .forEach((p) => {
+          const winRate = Math.round((p.wins / (p.wins + p.losses)) * 100) || 0;
+          const gainedClass = p.lpGained > 0 ? "positive" : (p.lpGained < 0 ? "negative" : "");
+          const gainedSign = p.lpGained > 0 ? "+" : "";
+  
+          const row = document.createElement("div");
+          row.className = "row";
+          row.innerHTML = `
+            ${profileImg(p)}
+            <div class="info">
+              <div class="name">${p.riotId}</div>
+              <div class="rank-line">${formatRank(p)}</div>
+            </div>
+            <div class="stats">
+              <div class="lp-gained ${gainedClass}">
+                ${rankIconImg(p.tier)}
+                <span class="lp-value">LP Gained: ${gainedSign}${p.lpGained}</span>
+              </div>
+              <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
+            </div>
+          `;
+          board.appendChild(row);
+        });
+  
+      document.getElementById("updated").textContent = new Date(data.lastUpdated).toLocaleString();
+    })
+    .catch(err => {
+      console.error("Failed to load rank data:", err);
+      document.getElementById("updated").textContent = "Failed to load data";
+    });
+  
   // Paste your 500x500 rank tier emblem URLs here (one per tier)
   const tierImages = {
     Iron:        "images/ranks/iron.png",
@@ -237,34 +270,6 @@
     return p.division ? `${p.tier} ${p.division} - ${p.lp} LP` : `${p.tier} - ${p.lp} LP`;
   }
 
-  const board = document.getElementById("board");
-  players
-    .sort((a, b) => b.lpGained - a.lpGained)
-    .forEach((p) => {
-      const winRate = Math.round((p.wins / (p.wins + p.losses)) * 100);
-      const gainedClass = p.lpGained > 0 ? "positive" : (p.lpGained < 0 ? "negative" : "");
-      const gainedSign = p.lpGained > 0 ? "+" : "";
-
-      const row = document.createElement("div");
-      row.className = "row";
-      row.innerHTML = `
-        ${profileImg(p)}
-        <div class="info">
-          <div class="name">${p.riotId}</div>
-          <div class="rank-line">${formatRank(p)}</div>
-        </div>
-        <div class="stats">
-          <div class="lp-gained ${gainedClass}">
-            ${rankIconImg(p.tier)}
-            <span class="lp-value">LP Gained: ${gainedSign}${p.lpGained}</span>
-          </div>
-          <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
-        </div>
-      `;
-      board.appendChild(row);
-    });
-
-  document.getElementById("updated").textContent = new Date().toLocaleString();
 </script>
 </body>
 </html>
