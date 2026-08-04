@@ -2,9 +2,15 @@ import requests
 import time
 import csv
 import os
+import json
+import datetime
 
-# api key and headers for Riot API requests
-# API KEY THING
+# API key comes from an environment variable — set as a GitHub Actions secret
+# named RIOT_API_KEY. Never hardcode the key in this file.
+api_key = os.environ.get("RIOT_API_KEY")
+if not api_key:
+    raise SystemExit("RIOT_API_KEY environment variable is not set.")
+
 headers = {"X-Riot-Token": api_key}
 
 # base urls for Riot API endpoints
@@ -14,7 +20,7 @@ summoner_base = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-puui
 players = []
 
 # Riot returns tier as ALLCAPS ("EMERALD") and division as roman numerals ("IV").
-# The JS output wants Title Case tiers and numeric divisions.
+# The JS/JSON output wants Title Case tiers and numeric divisions.
 DIVISION_TO_NUM = {"I": 1, "II": 2, "III": 3, "IV": 4}
 
 
@@ -57,26 +63,22 @@ def convertRank(rank):
 
 
 class player:
-    Name = ""
-    StartingRank = 0
-    StartingWins = 0
-    StartingLosses = 0
-    CurrentRankValue = 0
-    CurrentRankTier = ""
-    CurrentRankDivision = ""
-    CurrentRankLP = 0
-    CurrentWins = 0
-    CurrentLosses = 0
-    iconID = 29
-
     def __init__(self, name, StartingRank, StartingWins, StartingLosses):
         self.Name = name
         self.StartingRank = int(StartingRank)
         self.StartingWins = int(StartingWins)
         self.StartingLosses = int(StartingLosses)
+        self.CurrentRankValue = 0
+        self.CurrentRankTier = ""
+        self.CurrentRankDivision = ""
+        self.CurrentRankLP = 0
+        self.CurrentWins = 0
+        self.CurrentLosses = 0
+        self.iconID = 29
 
 
-csv_path = r"C:\Users\tcfal\Desktop\fALSE\startingData.csv"
+# Relative path — works both locally (run from repo root) and in GitHub Actions
+csv_path = os.path.join(os.path.dirname(__file__), "data", "startingData.csv")
 
 with open(csv_path, newline="", encoding="utf-8") as f:
     reader = csv.reader(f)
@@ -89,13 +91,11 @@ for user in players:
     username = user.Name
     # Step 1: Riot ID -> PUUID
     acc_resp = requests.get(account_base + username, headers=headers)
-    # if request fails, print error
     if acc_resp.status_code != 200:
         print(f"{username} -> Error fetching account: {acc_resp.status_code} {acc_resp.text}")
         continue
 
     puuid = acc_resp.json()["puuid"]
-    time.sleep(1.2)
 
     # Step 2: PUUID -> ranked entries
     rank_resp = requests.get(league_base + puuid, headers=headers)
@@ -113,8 +113,6 @@ for user in players:
     else:
         user.iconID = summ_resp.json()["profileIconId"]
 
-    #time.sleep(1.2)
-
     if solo_entry is None:
         print(f"{username} -> Unranked in Solo/Duo")
     else:
@@ -128,24 +126,16 @@ for user in players:
         user.CurrentRankDivision = rank
         user.CurrentRankLP = lp
         user.CurrentRankValue = convertRank(f"{tier} {rank} {lp}")
-        print(f"{user.Name} Current Rank: {user.CurrentRankValue}")
-        print(f"{user.Name} Starting Rank: {user.StartingRank}")
         user.CurrentWins = wins
         user.CurrentLosses = losses
-        print(f"{user.Name} LP Change: {user.CurrentRankValue - user.StartingRank} — {user.CurrentWins - user.StartingWins}W/{user.CurrentLosses - user.StartingLosses}L")
-        print(f"{user.Name} Icon ID: {user.iconID}")
-        print()
+        print(f"{user.Name}: {user.CurrentRankValue - user.StartingRank} pts, "
+              f"{user.CurrentWins - user.StartingWins}W/{user.CurrentLosses - user.StartingLosses}L")
 
     time.sleep(1.2)
 
 
-# --- Write results to a .txt file as JS-style object literals ---
-def format_player_js(p):
-    """
-    Builds one line like:
-    { time: null, riotId: "Eyren#Eyren", profileIconId: 4568, tier: "Emerald",
-      division: 4, lp: 95, lpGained: 40, wins: 3, losses: 1 },
-    """
+# --- Build JSON output matching the shape index.html expects ---
+def player_to_dict(p):
     tier_title = p.CurrentRankTier.title() if p.CurrentRankTier else "Unranked"
     division_num = DIVISION_TO_NUM.get(p.CurrentRankDivision, 0)
     lp_gained = p.CurrentRankValue - p.StartingRank
@@ -153,25 +143,28 @@ def format_player_js(p):
     losses_gained = p.CurrentLosses - p.StartingLosses
 
     riot_id1 = p.Name.split("/")
-    riot_id_escaped = riot_id1[0]+"#"+riot_id1[1]
+    riot_id_escaped = riot_id1[0] + "#" + riot_id1[1]
 
-    return (
-        "{ time: null, "
-        f'riotId: "{riot_id_escaped}", '
-        f"profileIconId: {p.iconID}, "
-        f'tier: "{tier_title}", '
-        f"division: {division_num}, "
-        f"lp: {p.CurrentRankLP}, "
-        f"lpGained: {lp_gained}, "
-        f"wins: {wins_gained}, "
-        f"losses: {losses_gained} }},"
-    )
+    return {
+        "time": None,
+        "riotId": riot_id_escaped,
+        "profileIconId": p.iconID,
+        "tier": tier_title,
+        "division": division_num,
+        "lp": p.CurrentRankLP,
+        "lpGained": lp_gained,
+        "wins": wins_gained,
+        "losses": losses_gained,
+    }
 
 
-output_path = os.path.abspath("CurrentData.txt")
+output_data = {
+    "lastUpdated": datetime.datetime.utcnow().isoformat() + "Z",
+    "players": [player_to_dict(p) for p in players],
+}
 
-with open(output_path, "a", newline="", encoding="utf-8") as f:
-    for p in players:
-        f.write(format_player_js(p) + "\n")
+output_path = os.path.join(os.path.dirname(__file__), "data", "data.json")
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(output_data, f, indent=2)
 
-print(f"\n Results written to: {output_path}")
+print(f"\nResults written to: {output_path}")
