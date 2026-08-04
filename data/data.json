@@ -1,0 +1,60 @@
+{
+  "lastUpdated": "2026-08-04T20:34:03.719963Z",
+  "players": [
+    {
+      "time": null,
+      "riotId": "2second#false",
+      "profileIconId": 5287,
+      "tier": "Diamond",
+      "division": 1,
+      "lp": 29,
+      "lpGained": -429,
+      "wins": 0,
+      "losses": 4
+    },
+    {
+      "time": null,
+      "riotId": "Arya#Nova",
+      "profileIconId": 7085,
+      "tier": "Master",
+      "division": 1,
+      "lp": 1030,
+      "lpGained": 29,
+      "wins": 1,
+      "losses": 0
+    },
+    {
+      "time": null,
+      "riotId": "Eyren#Eyren",
+      "profileIconId": 7084,
+      "tier": "Emerald",
+      "division": 4,
+      "lp": 59,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "time": null,
+      "riotId": "bitsofcool#yuumi",
+      "profileIconId": 4414,
+      "tier": "Platinum",
+      "division": 4,
+      "lp": 57,
+      "lpGained": 56,
+      "wins": 4,
+      "losses": 1
+    },
+    {
+      "time": null,
+      "riotId": "yoshi#4484",
+      "profileIconId": 6622,
+      "tier": "Platinum",
+      "division": 3,
+      "lp": 77,
+      "lpGained": 30,
+      "wins": 4,
+      "losses": 2
+    }
+  ]
+}
