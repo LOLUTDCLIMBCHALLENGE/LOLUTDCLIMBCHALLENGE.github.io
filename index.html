@@ -203,7 +203,7 @@
   }
 
   // Fetch live data instead of using hardcoded players
-  fetch('data/data.json')
+  fetch('data/data.json?t=' + Date.now())
     .then(response => response.json())
     .then(data => {
       const players = data.players;
