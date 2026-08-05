@@ -1,60 +1,60 @@
 {
-  "lastUpdated": "2026-08-05T19:19:26.574899Z",
+  "lastUpdated": "2026-08-05T19:23:02.011455Z",
   "players": [
     {
       "time": null,
       "riotId": "2second#false",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -2858,
-      "wins": -211,
-      "losses": -203
+      "profileIconId": 5287,
+      "tier": "Diamond",
+      "division": 1,
+      "lp": 8,
+      "lpGained": -150,
+      "wins": 0,
+      "losses": 5
     },
     {
       "time": null,
       "riotId": "Arya#Nova",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -4101,
-      "wins": -98,
-      "losses": -66
+      "profileIconId": 7085,
+      "tier": "Master",
+      "division": 1,
+      "lp": 966,
+      "lpGained": -35,
+      "wins": 2,
+      "losses": 3
     },
     {
       "time": null,
       "riotId": "Eyren#Eyren",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -2059,
-      "wins": -30,
-      "losses": -15
+      "profileIconId": 7084,
+      "tier": "Emerald",
+      "division": 4,
+      "lp": 59,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0
     },
     {
       "time": null,
       "riotId": "bitsofcool#yuumi",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -1601,
-      "wins": -75,
-      "losses": -81
+      "profileIconId": 4414,
+      "tier": "Platinum",
+      "division": 4,
+      "lp": 77,
+      "lpGained": 76,
+      "wins": 5,
+      "losses": 1
     },
     {
       "time": null,
       "riotId": "yoshi#4484",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -1747,
-      "wins": -67,
-      "losses": -77
+      "profileIconId": 6622,
+      "tier": "Platinum",
+      "division": 3,
+      "lp": 96,
+      "lpGained": 49,
+      "wins": 5,
+      "losses": 2
     }
   ]
 }
