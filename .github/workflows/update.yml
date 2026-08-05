@@ -1,5 +1,7 @@
 name: Update Rank Data
 
+#resync
+
 on:
   schedule:
     # Runs every 30 minutes (UTC). Adjust as you like.
