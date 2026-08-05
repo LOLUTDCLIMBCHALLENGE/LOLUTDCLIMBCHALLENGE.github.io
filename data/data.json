@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-08-05T19:23:02.011455Z",
+  "lastUpdated": "2026-08-05T20:30:47.930695Z",
   "players": [
     {
       "time": null,
       "riotId": "2second#false",
-      "profileIconId": 5287,
+      "profileIconId": 7075,
       "tier": "Diamond",
       "division": 1,
       "lp": 8,
@@ -22,6 +22,17 @@
       "lpGained": -35,
       "wins": 2,
       "losses": 3
+    },
+    {
+      "time": null,
+      "riotId": "Bones#casts",
+      "profileIconId": 6623,
+      "tier": "Diamond",
+      "division": 3,
+      "lp": 66,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0
     },
     {
       "time": null,
