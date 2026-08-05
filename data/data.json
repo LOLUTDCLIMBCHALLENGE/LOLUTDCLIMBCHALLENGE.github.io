@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T20:58:18.229857Z",
+  "lastUpdated": "2026-08-05T22:00:42.101074Z",
   "players": [
     {
       "time": null,
@@ -7,10 +7,10 @@
       "profileIconId": 7075,
       "tier": "Diamond",
       "division": 2,
-      "lp": 87,
-      "lpGained": -171,
+      "lp": 66,
+      "lpGained": -192,
       "wins": 0,
-      "losses": 6
+      "losses": 7
     },
     {
       "time": null,
@@ -29,10 +29,10 @@
       "profileIconId": 6623,
       "tier": "Diamond",
       "division": 3,
-      "lp": 45,
-      "lpGained": -21,
+      "lp": 24,
+      "lpGained": -42,
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     {
       "time": null,
