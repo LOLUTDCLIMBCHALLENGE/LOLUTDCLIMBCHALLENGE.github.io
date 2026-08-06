@@ -22,6 +22,7 @@ players = []
 # Riot returns tier as ALLCAPS ("EMERALD") and division as roman numerals ("IV").
 # The JS/JSON output wants Title Case tiers and numeric divisions.
 DIVISION_TO_NUM = {"I": 1, "II": 2, "III": 3, "IV": 4}
+MASTER_PLUS_TIERS = {"MASTER", "GRANDMASTER", "CHALLENGER"}
 
 
 def convertRank(rank):
@@ -87,6 +88,24 @@ with open(csv_path, newline="", encoding="utf-8") as f:
         players.append(newPlayer)
 
 
+# --- Load the previous data.json (if it exists) so we can carry forward
+# whether each player has EVER reached Master+ during the challenge.
+# Without this, every run would only know the player's CURRENT tier,
+# and someone who hit Master then dropped back to Diamond would lose the flag.
+output_path = os.path.join(os.path.dirname(__file__), "data", "data.json")
+previous_master_flags = {}
+
+if os.path.exists(output_path):
+    try:
+        with open(output_path, "r", encoding="utf-8") as f:
+            prev_data = json.load(f)
+            for pd in prev_data.get("players", []):
+                previous_master_flags[pd["riotId"]] = pd.get("reachedMaster", False)
+    except (json.JSONDecodeError, KeyError):
+        # If the old file is missing/corrupt, just start fresh — don't crash the run
+        previous_master_flags = {}
+
+
 for user in players:
     username = user.Name
     # Step 1: Riot ID -> PUUID
@@ -145,6 +164,9 @@ def player_to_dict(p):
     riot_id1 = p.Name.split("/")
     riot_id_escaped = riot_id1[0] + "#" + riot_id1[1]
 
+    reached_master_now = p.CurrentRankTier.upper() in MASTER_PLUS_TIERS if p.CurrentRankTier else False
+    reached_master_ever = previous_master_flags.get(riot_id_escaped, False) or reached_master_now
+
     return {
         "time": None,
         "riotId": riot_id_escaped,
@@ -155,6 +177,7 @@ def player_to_dict(p):
         "lpGained": lp_gained,
         "wins": wins_gained,
         "losses": losses_gained,
+        "reachedMaster": reached_master_ever,
     }
 
 
@@ -163,7 +186,6 @@ output_data = {
     "players": [player_to_dict(p) for p in players],
 }
 
-output_path = os.path.join(os.path.dirname(__file__), "data", "data.json")
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(output_data, f, indent=2)
 
