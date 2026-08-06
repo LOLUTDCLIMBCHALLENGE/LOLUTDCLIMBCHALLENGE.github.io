@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T23:22:40.958933Z",
+  "lastUpdated": "2026-08-06T04:18:20.093218Z",
   "players": [
     {
       "time": null,
@@ -7,9 +7,9 @@
       "profileIconId": 7075,
       "tier": "Diamond",
       "division": 2,
-      "lp": 43,
-      "lpGained": -215,
-      "wins": 1,
+      "lp": 62,
+      "lpGained": -196,
+      "wins": 2,
       "losses": 9
     },
     {
@@ -18,10 +18,10 @@
       "profileIconId": 7085,
       "tier": "Master",
       "division": 1,
-      "lp": 966,
-      "lpGained": -35,
-      "wins": 2,
-      "losses": 3
+      "lp": 964,
+      "lpGained": -37,
+      "wins": 3,
+      "losses": 4
     },
     {
       "time": null,
@@ -29,9 +29,9 @@
       "profileIconId": 6623,
       "tier": "Diamond",
       "division": 3,
-      "lp": 22,
-      "lpGained": -44,
-      "wins": 1,
+      "lp": 41,
+      "lpGained": -25,
+      "wins": 2,
       "losses": 3
     },
     {
@@ -51,21 +51,21 @@
       "profileIconId": 4414,
       "tier": "Platinum",
       "division": 4,
-      "lp": 77,
-      "lpGained": 76,
+      "lp": 57,
+      "lpGained": 56,
       "wins": 5,
-      "losses": 1
+      "losses": 2
     },
     {
       "time": null,
       "riotId": "yoshi#4484",
       "profileIconId": 6622,
       "tier": "Platinum",
-      "division": 2,
-      "lp": 15,
-      "lpGained": 68,
+      "division": 3,
+      "lp": 94,
+      "lpGained": 47,
       "wins": 6,
-      "losses": 2
+      "losses": 3
     }
   ]
 }
