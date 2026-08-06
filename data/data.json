@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-06T04:18:20.093218Z",
+  "lastUpdated": "2026-08-06T08:05:39.519706Z",
   "players": [
     {
       "time": null,
@@ -7,10 +7,10 @@
       "profileIconId": 7075,
       "tier": "Diamond",
       "division": 2,
-      "lp": 62,
-      "lpGained": -196,
-      "wins": 2,
-      "losses": 9
+      "lp": 60,
+      "lpGained": -198,
+      "wins": 3,
+      "losses": 10
     },
     {
       "time": null,
@@ -51,10 +51,10 @@
       "profileIconId": 4414,
       "tier": "Platinum",
       "division": 4,
-      "lp": 57,
-      "lpGained": 56,
+      "lp": 37,
+      "lpGained": 36,
       "wins": 5,
-      "losses": 2
+      "losses": 3
     },
     {
       "time": null,
@@ -62,10 +62,10 @@
       "profileIconId": 6622,
       "tier": "Platinum",
       "division": 3,
-      "lp": 94,
-      "lpGained": 47,
+      "lp": 52,
+      "lpGained": 5,
       "wins": 6,
-      "losses": 3
+      "losses": 5
     }
   ]
 }
