@@ -14,6 +14,7 @@
     --orange: #f0a030;
     --green: #3ec95f;
     --red: #e05a5a;
+    --purple: #b48af0;
   }
 
   * { box-sizing: border-box; }
@@ -117,6 +118,21 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .master-tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 999px;
+    padding: 2px 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .rank-line {
@@ -159,6 +175,12 @@
   .lp-gained.positive .lp-value { color: var(--green); }
   .lp-gained.negative .lp-value { color: var(--red); }
 
+  .penalty-note {
+    font-size: 11px;
+    color: var(--purple);
+    margin-top: 2px;
+  }
+
   .record {
     font-weight: 600;
     font-size: 15px;
@@ -194,8 +216,9 @@
   </div>
 
 <script>
-  // Fake data for now — swap this out for real data from your Python file
-  // profileIconId is the player's summoner icon ID (from the Riot API / your data source)
+  // Players who have reached Master+ at any point during the challenge have their
+  // total points counted at this reduced effectiveness for leaderboard purposes.
+  const MASTER_EFFECTIVENESS = 0.66;
 
   // Community Dragon serves the full profile icon set (more complete than Data Dragon)
   function profileIconUrl(id) {
@@ -208,40 +231,51 @@
     .then(data => {
       const players = data.players;
       const board = document.getElementById("board");
-  
+
+      // Compute each player's effective (leaderboard) LP.
+      // Players who have ever reached Master+ have their gained LP counted
+      // at MASTER_EFFECTIVENESS (66%) instead of 100%.
+      players.forEach((p) => {
+        const rawGained = p.lpGained;
+        p.effectiveLp = p.reachedMaster
+          ? Math.round(rawGained * MASTER_EFFECTIVENESS)
+          : rawGained;
+      });
+
       players
-        .sort((a, b) => b.lpGained - a.lpGained)
+        .sort((a, b) => b.effectiveLp - a.effectiveLp)
         .forEach((p) => {
           const winRate = Math.round((p.wins / (p.wins + p.losses)) * 100) || 0;
-          const gainedClass = p.lpGained > 0 ? "positive" : (p.lpGained < 0 ? "negative" : "");
-          const gainedSign = p.lpGained > 0 ? "+" : "";
-  
+          const gainedClass = p.effectiveLp > 0 ? "positive" : (p.effectiveLp < 0 ? "negative" : "");
+          const gainedSign = p.effectiveLp > 0 ? "+" : "";
+
           const row = document.createElement("div");
           row.className = "row";
           row.innerHTML = `
             ${profileImg(p)}
             <div class="info">
-              <div class="name">${p.riotId}</div>
+              <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}</div>
             </div>
             <div class="stats">
               <div class="lp-gained ${gainedClass}">
                 ${rankIconImg(p.tier)}
-                <span class="lp-value">LP Gained: ${gainedSign}${p.lpGained}</span>
+                <span class="lp-value">LP Gained: ${gainedSign}${p.effectiveLp}</span>
               </div>
+              ${p.reachedMaster ? `<div class="penalty-note">66% effectiveness (raw: ${p.lpGained > 0 ? '+' : ''}${p.lpGained})</div>` : ''}
               <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
             </div>
           `;
           board.appendChild(row);
         });
-  
+
       document.getElementById("updated").textContent = new Date(data.lastUpdated).toLocaleString();
     })
     .catch(err => {
       console.error("Failed to load rank data:", err);
       document.getElementById("updated").textContent = "Failed to load data";
     });
-  
+
   // Paste your 500x500 rank tier emblem URLs here (one per tier)
   const tierImages = {
     Iron:        "images/ranks/iron.png",
