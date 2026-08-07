@@ -143,8 +143,8 @@
   }
 
   .rank-icon-wrap {
-    width: 128px;
-    height: 128px;
+    width: 102px;
+    height: 102px;
     flex-shrink: 0;
     overflow: hidden;
   }
@@ -259,8 +259,8 @@
     }
 
     .rank-icon-wrap {
-      width: 56px;
-      height: 56px;
+      width: 45px;
+      height: 45px;
     }
   }
 </style>
@@ -374,10 +374,14 @@
   const NO_DIVISION_TIERS = ["Master", "Grandmaster", "Challenger"];
 
   function formatRank(p) {
-    if (NO_DIVISION_TIERS.includes(p.tier)) {
-      return `${p.tier} - ${p.lp} LP`;
+    const tier = (p.tier || "").trim();
+    const isNoDivision = NO_DIVISION_TIERS.some(
+      (t) => t.toLowerCase() === tier.toLowerCase()
+    );
+    if (isNoDivision) {
+      return `${tier} - ${p.lp} LP`;
     }
-    return p.division ? `${p.tier} ${p.division} - ${p.lp} LP` : `${p.tier} - ${p.lp} LP`;
+    return p.division ? `${tier} ${p.division} - ${p.lp} LP` : `${tier} - ${p.lp} LP`;
   }
 
 </script>
