@@ -8,13 +8,16 @@
   :root {
     --bg: #05070d;
     --row-bg: #0a0a0a;
-    --border: #ffffff;
+    --border: #6b6b6b;
     --text-main: #e6e6e6;
     --text-sub: #b8b8b8;
     --orange: #f0a030;
     --green: #3ec95f;
     --red: #e05a5a;
     --purple: #b48af0;
+    --gold: #ffd700;
+    --silver: #c8ccd4;
+    --bronze: #cd7f32;
   }
 
   * { box-sizing: border-box; }
@@ -66,7 +69,7 @@
   }
 
   h1 .climb { color: var(--orange); }
-  h1 .challenge { color: var(--green); }
+  h1 .challenge { color: #6fe08a; }
 
   .subtitle {
     color: #cfcfcf;
@@ -88,6 +91,21 @@
     border-radius: 999px;
     border: 3px solid var(--border);
     padding: 14px 32px 14px 16px;
+  }
+
+  .row.rank-1 {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px 1px rgba(255, 215, 0, 0.55), 0 0 22px 4px rgba(255, 215, 0, 0.3);
+  }
+
+  .row.rank-2 {
+    border-color: var(--silver);
+    box-shadow: 0 0 10px 1px rgba(200, 204, 212, 0.5), 0 0 22px 4px rgba(200, 204, 212, 0.25);
+  }
+
+  .row.rank-3 {
+    border-color: var(--bronze);
+    box-shadow: 0 0 10px 1px rgba(205, 127, 50, 0.5), 0 0 22px 4px rgba(205, 127, 50, 0.25);
   }
 
   .badge-wrap {
@@ -313,17 +331,20 @@
 
       players
         .sort((a, b) => b.effectiveLp - a.effectiveLp)
-        .forEach((p) => {
+        .forEach((p, index) => {
           const winRate = Math.round((p.wins / (p.wins + p.losses)) * 100) || 0;
           const gainedClass = p.effectiveLp > 0 ? "positive" : (p.effectiveLp < 0 ? "negative" : "");
           const gainedSign = p.effectiveLp > 0 ? "+" : "";
 
           const row = document.createElement("div");
           row.className = "row";
+          if (index === 0) row.classList.add("rank-1");
+          else if (index === 1) row.classList.add("rank-2");
+          else if (index === 2) row.classList.add("rank-3");
           row.innerHTML = `
             ${profileImg(p)}
             <div class="info">
-              <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+ PEAK</span>' : ''}</div>
+              <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}</div>
             </div>
             <div class="stats">
