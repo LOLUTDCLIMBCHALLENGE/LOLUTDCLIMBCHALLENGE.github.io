@@ -262,7 +262,7 @@
                 ${rankIconImg(p.tier)}
                 <span class="lp-value">LP Gained: ${gainedSign}${p.effectiveLp}</span>
               </div>
-              ${p.reachedMaster ? `<div class="penalty-note">66% effectiveness (raw: ${p.lpGained > 0 ? '+' : ''}${p.lpGained})</div>` : ''}
+              ${p.reachedMaster ? `<div class="penalty-note"></div>` : ''}
               <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
             </div>
           `;
