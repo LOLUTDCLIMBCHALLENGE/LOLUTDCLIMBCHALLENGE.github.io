@@ -108,6 +108,19 @@
     box-shadow: 0 0 10px 1px rgba(205, 127, 50, 0.5), 0 0 22px 4px rgba(205, 127, 50, 0.25);
   }
 
+  .placement {
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text-sub);
+  }
+
+  .row.rank-1 .placement { color: var(--gold); }
+  .row.rank-2 .placement { color: var(--silver); }
+  .row.rank-3 .placement { color: var(--bronze); }
+
   .badge-wrap {
     width: 84px;
     height: 84px;
@@ -250,7 +263,12 @@
       flex-wrap: wrap;
       border-radius: 24px;
       padding: 14px 18px;
-      gap: 12px;
+      gap: 10px;
+    }
+
+    .placement {
+      width: 26px;
+      font-size: 16px;
     }
 
     .badge-wrap {
@@ -273,7 +291,7 @@
 
     .stats {
       width: 100%;
-      padding-left: 68px; /* aligns under the name, past the badge */
+      padding-left: 92px; /* aligns under the name, past the placement number + badge */
       gap: 10px;
     }
 
@@ -343,6 +361,7 @@
           else if (index === 1) row.classList.add("rank-2");
           else if (index === 2) row.classList.add("rank-3");
           row.innerHTML = `
+            <div class="placement">#${index + 1}</div>
             ${profileImg(p)}
             <div class="info">
               <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
