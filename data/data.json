@@ -1,16 +1,17 @@
 {
-  "lastUpdated": "2026-08-06T08:05:39.519706Z",
+  "lastUpdated": "2026-08-07T00:00:57.750311Z",
   "players": [
     {
       "time": null,
       "riotId": "2second#false",
-      "profileIconId": 7075,
+      "profileIconId": 6300,
       "tier": "Diamond",
       "division": 2,
       "lp": 60,
       "lpGained": -198,
       "wins": 3,
-      "losses": 10
+      "losses": 10,
+      "reachedMaster": false
     },
     {
       "time": null,
@@ -21,7 +22,8 @@
       "lp": 964,
       "lpGained": -37,
       "wins": 3,
-      "losses": 4
+      "losses": 4,
+      "reachedMaster": true
     },
     {
       "time": null,
@@ -29,10 +31,11 @@
       "profileIconId": 6623,
       "tier": "Diamond",
       "division": 3,
-      "lp": 41,
-      "lpGained": -25,
-      "wins": 2,
-      "losses": 3
+      "lp": 79,
+      "lpGained": 13,
+      "wins": 4,
+      "losses": 3,
+      "reachedMaster": false
     },
     {
       "time": null,
@@ -43,7 +46,8 @@
       "lp": 59,
       "lpGained": 0,
       "wins": 0,
-      "losses": 0
+      "losses": 0,
+      "reachedMaster": false
     },
     {
       "time": null,
@@ -54,7 +58,8 @@
       "lp": 37,
       "lpGained": 36,
       "wins": 5,
-      "losses": 3
+      "losses": 3,
+      "reachedMaster": false
     },
     {
       "time": null,
@@ -62,10 +67,11 @@
       "profileIconId": 6622,
       "tier": "Platinum",
       "division": 3,
-      "lp": 52,
-      "lpGained": 5,
+      "lp": 30,
+      "lpGained": -17,
       "wins": 6,
-      "losses": 5
+      "losses": 6,
+      "reachedMaster": false
     }
   ]
 }
