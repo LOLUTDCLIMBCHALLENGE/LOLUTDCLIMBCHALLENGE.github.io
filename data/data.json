@@ -29,7 +29,7 @@
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": true
+      "decayedFromGM": false
     },
     {
       "time": null,
