@@ -11,7 +11,7 @@
       "lpGained": -198,
       "wins": 3,
       "losses": 10,
-      "reachedMaster": false
+      "reachedMaster": true
     },
     {
       "time": null,
@@ -35,7 +35,7 @@
       "lpGained": 13,
       "wins": 4,
       "losses": 3,
-      "reachedMaster": false
+      "reachedMaster": true
     },
     {
       "time": null,
