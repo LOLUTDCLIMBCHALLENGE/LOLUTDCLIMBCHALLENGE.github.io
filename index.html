@@ -353,7 +353,7 @@
                 <div class="lp-gained ${gainedClass}">
                   <span class="lp-value">LP Gained: ${gainedSign}${p.effectiveLp}</span>
                 </div>
-                ${(p.reachedMaster && p.lpGained > 0) ? `<div class="penalty-note">Reduced Points</div>` : ''}
+                ${p.reachedMaster ? `<div class="penalty-note">Reduced Points</div>` : ''}
                 <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
               </div>
             </div>
