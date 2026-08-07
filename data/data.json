@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T04:08:42.255068Z",
+  "lastUpdated": "2026-08-07T06:01:56.873085Z",
   "players": [
     {
       "time": null,
@@ -7,10 +7,10 @@
       "profileIconId": 6300,
       "tier": "Diamond",
       "division": 2,
-      "lp": 60,
-      "lpGained": -198,
-      "wins": 3,
-      "losses": 10,
+      "lp": 58,
+      "lpGained": -200,
+      "wins": 4,
+      "losses": 11,
       "reachedMaster": true
     },
     {
@@ -55,10 +55,10 @@
       "profileIconId": 4414,
       "tier": "Platinum",
       "division": 4,
-      "lp": 37,
-      "lpGained": 36,
-      "wins": 5,
-      "losses": 3,
+      "lp": 35,
+      "lpGained": 34,
+      "wins": 6,
+      "losses": 4,
       "reachedMaster": false
     },
     {
@@ -67,10 +67,10 @@
       "profileIconId": 6622,
       "tier": "Platinum",
       "division": 3,
-      "lp": 30,
-      "lpGained": -17,
-      "wins": 6,
-      "losses": 6,
+      "lp": 26,
+      "lpGained": -21,
+      "wins": 7,
+      "losses": 7,
       "reachedMaster": false
     },
     {
@@ -139,10 +139,10 @@
       "profileIconId": 4397,
       "tier": "Challenger",
       "division": 1,
-      "lp": 1607,
-      "lpGained": 0,
+      "lp": 1572,
+      "lpGained": -35,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "reachedMaster": true
     }
   ]
