@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T07:29:50.831332Z",
+  "lastUpdated": "2026-08-07T10:11:32.040769Z",
   "players": [
     {
       "time": null,
@@ -19,9 +19,9 @@
       "profileIconId": 7085,
       "tier": "Master",
       "division": 1,
-      "lp": 962,
-      "lpGained": -39,
-      "wins": 4,
+      "lp": 991,
+      "lpGained": -10,
+      "wins": 5,
       "losses": 5,
       "reachedMaster": true
     },
@@ -88,7 +88,7 @@
     {
       "time": null,
       "riotId": "JoeyJoJoJoey#Joey",
-      "profileIconId": 6028,
+      "profileIconId": 6490,
       "tier": "Master",
       "division": 1,
       "lp": 0,
@@ -139,10 +139,10 @@
       "profileIconId": 4397,
       "tier": "Challenger",
       "division": 1,
-      "lp": 1572,
-      "lpGained": -35,
+      "lp": 1537,
+      "lpGained": -70,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "reachedMaster": true
     }
   ]
