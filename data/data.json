@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T00:20:27.186909Z",
+  "lastUpdated": "2026-08-07T00:33:00.932610Z",
   "players": [
     {
       "time": null,
@@ -128,6 +128,18 @@
       "tier": "Grandmaster",
       "division": 1,
       "lp": 1031,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true
+    },
+    {
+      "time": null,
+      "riotId": "Radon#XLBT",
+      "profileIconId": 4397,
+      "tier": "Challenger",
+      "division": 1,
+      "lp": 1607,
       "lpGained": 0,
       "wins": 0,
       "losses": 0,
