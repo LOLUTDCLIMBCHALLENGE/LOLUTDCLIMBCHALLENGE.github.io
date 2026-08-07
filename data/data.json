@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T23:29:00.764038Z",
+  "lastUpdated": "2026-08-07T23:41:16.089474Z",
   "players": [
     {
       "time": null,
@@ -177,6 +177,36 @@
       "wins": 0,
       "losses": 3,
       "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
+    },
+    {
+      "time": null,
+      "riotId": "emanex#mnx",
+      "profileIconId": 7191,
+      "tier": "Diamond",
+      "division": 1,
+      "lp": 24,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
+    },
+    {
+      "time": null,
+      "riotId": "legacycoolbro#1021",
+      "profileIconId": 2076,
+      "tier": "Emerald",
+      "division": 4,
+      "lp": 97,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false
