@@ -325,8 +325,35 @@
 
 <script>
   // Players who have reached Master+ at any point during the challenge have their
-  // total points counted at this reduced effectiveness for leaderboard purposes.
+  // total points counted at reduced effectiveness for leaderboard purposes.
+  // The exact reduction depends on manual flags set by hand in data.json:
+  //   decayedFromGM  -> 50%  (tagged Master+ but decayed down from GM+)
+  //   startedEmerald -> 50%  (tagged Master+ but started the challenge in Emerald)
+  //   startedDiamond -> 60%  (tagged Master+ but started the challenge in Diamond)
+  //   reachedMaster only (none of the above) -> 66% default
+  // Checked in this order — if more than one flag is true, the first match wins.
   const MASTER_EFFECTIVENESS = 0.66;
+  const DECAYED_FROM_GM_EFFECTIVENESS = 0.5;
+  const STARTED_EMERALD_EFFECTIVENESS = 0.5;
+  const STARTED_DIAMOND_EFFECTIVENESS = 0.6;
+
+  function getEffectiveness(p) {
+    if (!p.reachedMaster) return 1;
+    if (p.decayedFromGM) return DECAYED_FROM_GM_EFFECTIVENESS;
+    if (p.startedEmerald) return STARTED_EMERALD_EFFECTIVENESS;
+    if (p.startedDiamond) return STARTED_DIAMOND_EFFECTIVENESS;
+    return MASTER_EFFECTIVENESS;
+  }
+
+  // Short label shown in the "Reduced Gains" note so it's clear *why* a
+  // player's points were reduced.
+  function getAdjustmentLabel(p) {
+    if (!p.reachedMaster) return "";
+    if (p.decayedFromGM) return "Decayed from GM+ (50%)";
+    if (p.startedEmerald) return "Started Emerald (50%)";
+    if (p.startedDiamond) return "Started Diamond (60%)";
+    return "Reduced Gains (66%)";
+  }
 
   // Community Dragon serves the full profile icon set (more complete than Data Dragon)
   function profileIconUrl(id) {
@@ -345,8 +372,8 @@
       // at MASTER_EFFECTIVENESS (66%) instead of 100%.
       players.forEach((p) => {
         const rawGained = p.lpGained;
-        p.effectiveLp = (p.reachedMaster && rawGained > 0)
-          ? Math.round(rawGained * MASTER_EFFECTIVENESS)
+        p.effectiveLp = (rawGained > 0)
+          ? Math.round(rawGained * getEffectiveness(p))
           : rawGained;
       });
 
@@ -368,7 +395,7 @@
             <div class="info">
               <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}</div>
-              ${p.reachedMaster ? `<div class="penalty-note">Reduced Gains</div>` : ''}
+              ${p.reachedMaster ? `<div class="penalty-note">${getAdjustmentLabel(p)}</div>` : ''}
             </div>
             <div class="stats">
               ${rankIconImg(p.tier)}
