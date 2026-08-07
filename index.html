@@ -146,15 +146,19 @@
     width: 40px;
     height: 40px;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .rank-icon {
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 250%;
     height: 250%;
     object-fit: fill;
-    margin-left: -160%;
-    margin-top: -40%;
+    transform: translate(-50%, -50%);
   }
 
   .stats {
@@ -167,7 +171,7 @@
     font-size: 16px;
     color: var(--text-main);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
     gap: 10px;
   }
@@ -178,7 +182,7 @@
   .penalty-note {
     font-size: 11px;
     color: var(--purple);
-    margin-top: -8px;
+    margin-top: 2px;
   }
 
   .record {
@@ -256,6 +260,7 @@
 
     .lp-gained {
       justify-content: flex-start;
+      align-items: flex-end;
     }
 
     .rank-icon-wrap {
