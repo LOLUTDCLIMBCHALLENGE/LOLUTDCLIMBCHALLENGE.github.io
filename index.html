@@ -345,14 +345,15 @@
     return MASTER_EFFECTIVENESS;
   }
 
-  // Short label shown in the "Reduced Gains" note so it's clear *why* a
-  // player's points were reduced.
+  // Short label shown under a Master+ player's name, e.g. "40% Reduced Gains".
+  // Derived from getEffectiveness() so the percentage shown always matches the
+  // multiplier actually applied — except the plain-Master+ default, which is
+  // shown as a clean 33% (the real multiplier stays 0.66, this is display-only).
   function getAdjustmentLabel(p) {
     if (!p.reachedMaster) return "";
-    if (p.decayedFromGM) return "Decayed from GM+ (50%)";
-    if (p.startedEmerald) return "Started Emerald (50%)";
-    if (p.startedDiamond) return "Started Diamond (60%)";
-    return "Reduced Gains (66%)";
+    const isDefaultMasterOnly = !p.decayedFromGM && !p.startedEmerald && !p.startedDiamond;
+    const reductionPct = isDefaultMasterOnly ? 33 : Math.round((1 - getEffectiveness(p)) * 100);
+    return `${reductionPct}% Reduced Gains`;
   }
 
   // Community Dragon serves the full profile icon set (more complete than Data Dragon)
