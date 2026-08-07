@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T00:12:20.060511Z",
+  "lastUpdated": "2026-08-07T00:20:27.186909Z",
   "players": [
     {
       "time": null,
@@ -72,6 +72,66 @@
       "wins": 6,
       "losses": 6,
       "reachedMaster": false
+    },
+    {
+      "time": null,
+      "riotId": "Goat#Benz",
+      "profileIconId": 907,
+      "tier": "Emerald",
+      "division": 1,
+      "lp": 35,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false
+    },
+    {
+      "time": null,
+      "riotId": "JoeyJoJoJoey#Joey",
+      "profileIconId": 6028,
+      "tier": "Master",
+      "division": 1,
+      "lp": 0,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true
+    },
+    {
+      "time": null,
+      "riotId": "Smoke Criminal#na2",
+      "profileIconId": 4021,
+      "tier": "Master",
+      "division": 1,
+      "lp": 947,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true
+    },
+    {
+      "time": null,
+      "riotId": "Zacian#Fox",
+      "profileIconId": 6916,
+      "tier": "Master",
+      "division": 1,
+      "lp": 272,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true
+    },
+    {
+      "time": null,
+      "riotId": "limitless#zaza",
+      "profileIconId": 4027,
+      "tier": "Grandmaster",
+      "division": 1,
+      "lp": 1031,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true
     }
   ]
 }
