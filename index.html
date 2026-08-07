@@ -143,17 +143,22 @@
   }
 
   .rank-icon-wrap {
-    width: 128px;
-    height: 128px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
+    position: relative;
     overflow: hidden;
   }
 
   .rank-icon {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    object-fit: fill;
+    transform: translate(-50%, -50%);
   }
 
   .stats {
@@ -166,7 +171,7 @@
     font-size: 16px;
     color: var(--text-main);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
     gap: 10px;
   }
@@ -177,7 +182,7 @@
   .penalty-note {
     font-size: 11px;
     color: var(--purple);
-    margin-top: -8px;
+    margin-top: 2px;
   }
 
   .record {
@@ -255,22 +260,12 @@
 
     .lp-gained {
       justify-content: flex-start;
+      align-items: flex-end;
     }
 
     .rank-icon-wrap {
-      width: 88px;
-      height: 88px;
-    }
-
-    /* Rank icon (88px) + the 10px gap in .lp-gained = 98px before the
-       "LP Gained" text starts. Push the penalty note and record over
-       by the same amount so they line up under the text, not the icon. */
-    .penalty-note {
-      margin-left: 98px;
-    }
-
-    .record {
-      margin-left: 98px;
+      width: 28px;
+      height: 28px;
     }
   }
 </style>
@@ -379,12 +374,7 @@
     return `<div class="rank-icon-wrap"><img class="rank-icon" src="${url}" alt="${tier}" /></div>`;
   }
 
-  const NO_DIVISION_TIERS = ["Master", "Grandmaster", "Challenger"];
-
   function formatRank(p) {
-    if (NO_DIVISION_TIERS.includes(p.tier)) {
-      return `${p.tier} - ${p.lp} LP`;
-    }
     return p.division ? `${p.tier} ${p.division} - ${p.lp} LP` : `${p.tier} - ${p.lp} LP`;
   }
 
