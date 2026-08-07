@@ -11,7 +11,10 @@
       "lpGained": -2858,
       "wins": -211,
       "losses": -203,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": true,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -23,7 +26,10 @@
       "lpGained": -4101,
       "wins": -98,
       "losses": -66,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": true
     },
     {
       "time": null,
@@ -35,7 +41,10 @@
       "lpGained": -2566,
       "wins": -152,
       "losses": -176,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": true,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -47,7 +56,10 @@
       "lpGained": -2059,
       "wins": -30,
       "losses": -15,
-      "reachedMaster": false
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -59,7 +71,10 @@
       "lpGained": -1601,
       "wins": -75,
       "losses": -81,
-      "reachedMaster": false
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -71,7 +86,10 @@
       "lpGained": -1747,
       "wins": -67,
       "losses": -77,
-      "reachedMaster": false
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -83,7 +101,10 @@
       "lpGained": -2335,
       "wins": -27,
       "losses": -31,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": true
     },
     {
       "time": null,
@@ -95,7 +116,10 @@
       "lpGained": -3100,
       "wins": -285,
       "losses": -248,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": true
     },
     {
       "time": null,
@@ -107,7 +131,10 @@
       "lpGained": -4047,
       "wins": -146,
       "losses": -124,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -119,7 +146,10 @@
       "lpGained": -3372,
       "wins": -135,
       "losses": -96,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": true
     },
     {
       "time": null,
@@ -131,7 +161,10 @@
       "lpGained": -4131,
       "wins": -208,
       "losses": -186,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
     },
     {
       "time": null,
@@ -143,7 +176,10 @@
       "lpGained": -4707,
       "wins": -899,
       "losses": -873,
-      "reachedMaster": true
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false
     }
   ]
 }
