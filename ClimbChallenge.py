@@ -93,17 +93,24 @@ with open(csv_path, newline="", encoding="utf-8") as f:
 # Without this, every run would only know the player's CURRENT tier,
 # and someone who hit Master then dropped back to Diamond would lose the flag.
 output_path = os.path.join(os.path.dirname(__file__), "data", "data.json")
-previous_master_flags = {}
+previous_player_data = {}
 
 if os.path.exists(output_path):
     try:
         with open(output_path, "r", encoding="utf-8") as f:
             prev_data = json.load(f)
             for pd in prev_data.get("players", []):
-                previous_master_flags[pd["riotId"]] = pd.get("reachedMaster", False)
+                previous_player_data[pd["riotId"]] = pd
     except (json.JSONDecodeError, KeyError):
         # If the old file is missing/corrupt, just start fresh — don't crash the run
-        previous_master_flags = {}
+        previous_player_data = {}
+
+# Fields the user sets by hand in data.json to apply LP-effectiveness
+# adjustments on the leaderboard (see index.html for how they're used).
+# The script never computes these — it only carries forward whatever
+# value was already sitting in the previous data.json for that player,
+# so manual edits survive the next run.
+MANUAL_ADJUSTMENT_FIELDS = ["startedDiamond", "startedEmerald", "decayedFromGM"]
 
 
 for user in players:
@@ -164,10 +171,12 @@ def player_to_dict(p):
     riot_id1 = p.Name.split("/")
     riot_id_escaped = riot_id1[0] + "#" + riot_id1[1]
 
-    reached_master_now = p.CurrentRankTier.upper() in MASTER_PLUS_TIERS if p.CurrentRankTier else False
-    reached_master_ever = previous_master_flags.get(riot_id_escaped, False) or reached_master_now
+    prev = previous_player_data.get(riot_id_escaped, {})
 
-    return {
+    reached_master_now = p.CurrentRankTier.upper() in MASTER_PLUS_TIERS if p.CurrentRankTier else False
+    reached_master_ever = prev.get("reachedMaster", False) or reached_master_now
+
+    result = {
         "time": None,
         "riotId": riot_id_escaped,
         "profileIconId": p.iconID,
@@ -179,6 +188,13 @@ def player_to_dict(p):
         "losses": losses_gained,
         "reachedMaster": reached_master_ever,
     }
+
+    # Carry forward manual adjustment flags as-is — these are edited by hand
+    # in data.json and the script must never overwrite them with a default.
+    for field in MANUAL_ADJUSTMENT_FIELDS:
+        result[field] = prev.get(field, False)
+
+    return result
 
 
 output_data = {
