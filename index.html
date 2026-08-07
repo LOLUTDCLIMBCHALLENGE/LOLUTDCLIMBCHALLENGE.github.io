@@ -146,6 +146,7 @@
     width: 40px;
     height: 40px;
     flex-shrink: 0;
+    overflow: hidden;
   }
 
   .rank-icon {
@@ -380,7 +381,12 @@
     return `<div class="rank-icon-wrap"><img class="rank-icon" src="${url}" alt="${tier}" /></div>`;
   }
 
+  const NO_DIVISION_TIERS = ["Master", "Grandmaster", "Challenger"];
+
   function formatRank(p) {
+    if (NO_DIVISION_TIERS.includes(p.tier)) {
+      return `${p.tier} - ${p.lp} LP`;
+    }
     return p.division ? `${p.tier} ${p.division} - ${p.lp} LP` : `${p.tier} - ${p.lp} LP`;
   }
 
