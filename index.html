@@ -202,6 +202,7 @@
   .penalty-note {
     font-size: 11px;
     color: var(--purple);
+    margin-top: 3px;
   }
 
   .record {
@@ -346,6 +347,7 @@
             <div class="info">
               <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}</div>
+              ${p.reachedMaster ? `<div class="penalty-note">Reduced Gains</div>` : ''}
             </div>
             <div class="stats">
               ${rankIconImg(p.tier)}
@@ -353,7 +355,6 @@
                 <div class="lp-gained ${gainedClass}">
                   <span class="lp-value">LP Gained: ${gainedSign}${p.effectiveLp}</span>
                 </div>
-                ${p.reachedMaster ? `<div class="penalty-note">Reduced Gains</div>` : ''}
                 <div class="record">${p.wins}W - ${p.losses}L (${winRate}%)</div>
               </div>
             </div>
