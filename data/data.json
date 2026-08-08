@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-08T18:01:12.631517Z",
+  "lastUpdated": "2026-08-08T19:58:09.236876Z",
   "players": [
     {
       "time": null,
@@ -22,10 +22,10 @@
       "profileIconId": 6934,
       "tier": "Master",
       "division": 1,
-      "lp": 1014,
-      "lpGained": 13,
+      "lp": 952,
+      "lpGained": -49,
       "wins": 9,
-      "losses": 8,
+      "losses": 10,
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
