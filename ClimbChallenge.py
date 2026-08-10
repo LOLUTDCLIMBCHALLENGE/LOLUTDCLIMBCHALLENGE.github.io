@@ -110,7 +110,10 @@ if os.path.exists(output_path):
 # The script never computes these — it only carries forward whatever
 # value was already sitting in the previous data.json for that player,
 # so manual edits survive the next run.
-MANUAL_ADJUSTMENT_FIELDS = ["startedDiamond", "startedEmerald", "decayedFromGM"]
+MANUAL_ADJUSTMENT_FIELDS = [
+    "startedDiamond", "startedEmerald", "decayedFromGM",
+    "isStudent", "isAlumni", "isFriend",
+]
 
 
 for user in players:
