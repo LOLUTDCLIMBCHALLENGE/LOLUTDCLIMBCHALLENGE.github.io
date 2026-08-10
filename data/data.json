@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-10T00:02:36.378879Z",
+  "lastUpdated": "2026-08-10T02:34:10.488645Z",
   "players": [
     {
       "time": null,
@@ -88,6 +88,24 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "bitsofcool#yuumi",
+      "profileIconId": 4414,
+      "tier": "Platinum",
+      "division": 3,
+      "lp": 15,
+      "lpGained": 80,
+      "wins": 4,
+      "losses": 0,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     }
