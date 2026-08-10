@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-10T02:28:31.296183Z",
+  "lastUpdated": "2026-08-10T00:02:36.378879Z",
   "players": [
     {
       "time": null,
@@ -14,7 +14,10 @@
       "reachedMaster": true,
       "startedDiamond": true,
       "startedEmerald": false,
-      "decayedFromGM": false
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     },
     {
       "time": null,
@@ -29,7 +32,10 @@
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": false
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     },
     {
       "time": null,
@@ -44,7 +50,10 @@
       "reachedMaster": true,
       "startedDiamond": true,
       "startedEmerald": false,
-      "decayedFromGM": false
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     },
     {
       "time": null,
@@ -59,7 +68,10 @@
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": false
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     },
     {
       "time": null,
@@ -74,22 +86,10 @@
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": false
-    },
-    {
-      "time": null,
-      "riotId": "bitsofcool#yuumi",
-      "profileIconId": 4414,
-      "tier": "Platinum",
-      "division": 3,
-      "lp": 15,
-      "lpGained": 80,
-      "wins": 4,
-      "losses": 0,
-      "reachedMaster": false,
-      "startedDiamond": false,
-      "startedEmerald": false,
-      "decayedFromGM": false
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     }
   ]
 }
