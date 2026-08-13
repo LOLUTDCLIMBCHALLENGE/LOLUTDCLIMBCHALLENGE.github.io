@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-08-12T21:27:39.062284Z",
+  "lastUpdated": "2026-08-13T00:03:04.129894Z",
   "players": [
     {
       "time": null,
       "riotId": "2second#false",
-      "profileIconId": 6300,
+      "profileIconId": 7195,
       "tier": "Diamond",
       "division": 1,
       "lp": 67,
@@ -97,10 +97,10 @@
       "profileIconId": 4414,
       "tier": "Platinum",
       "division": 3,
-      "lp": 82,
-      "lpGained": 147,
-      "wins": 9,
-      "losses": 2,
+      "lp": 86,
+      "lpGained": 151,
+      "wins": 10,
+      "losses": 3,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
