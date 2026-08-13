@@ -51,6 +51,15 @@ def convertRank(rank):
     elif rank1.startswith("CHALLENGER"):
         totalRank = 2800
 
+    # Master, Grandmaster, and Challenger have no divisions — LP is continuous
+    # from 0 within the tier. Riot's API still returns a "rank" field for
+    # these entries (always "I"), but it does NOT represent a real division
+    # and must not get the divisional bonus applied below, or every Master+
+    # player gets an extra flat 300 points added to their rank value.
+    if rank1 in MASTER_PLUS_TIERS:
+        totalRank += int(rankParts[-1])
+        return totalRank
+
     rank2 = rankParts[1].upper()
     division_map = {"I": 1, "II": 2, "III": 3, "IV": 4}
     if rank2 in division_map:
