@@ -12,7 +12,7 @@
       "wins": 0,
       "losses": 0,
       "reachedMaster": true,
-      "startedDiamond": true,
+      "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
