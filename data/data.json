@@ -142,7 +142,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
