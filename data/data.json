@@ -554,10 +554,11 @@
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": true,
+      "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": true,
       "isFriend": false
+      "manualPenalty": 0.5
     },
     {
       "time": null,
