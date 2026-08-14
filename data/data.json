@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T05:24:48.923937Z",
+  "lastUpdated": "2026-08-14T05:38:36.056482Z",
   "players": [
     {
       "time": null,
@@ -636,11 +636,11 @@
       "riotId": "Thousand Arrows#cells",
       "profileIconId": 7167,
       "tier": "Gold",
-      "division": 1,
-      "lp": 12,
-      "lpGained": 0,
+      "division": 2,
+      "lp": 89,
+      "lpGained": -23,
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
@@ -738,6 +738,24 @@
       "isStudent": false,
       "isAlumni": false,
       "isFriend": true
+    },
+    {
+      "time": null,
+      "riotId": "Smoke Criminal#NA2",
+      "profileIconId": 4021,
+      "tier": "Master",
+      "division": 1,
+      "lp": 915,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     }
   ]
 }
