@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T07:49:17.460363Z",
+  "lastUpdated": "2026-08-14T07:53:21.813372Z",
   "players": [
     {
       "time": null,
@@ -205,10 +205,10 @@
       "profileIconId": 907,
       "tier": "Emerald",
       "division": 1,
-      "lp": 75,
-      "lpGained": 20,
+      "lp": 65,
+      "lpGained": 10,
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": true,
@@ -790,6 +790,24 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "death#ntnt",
+      "profileIconId": 5463,
+      "tier": "Emerald",
+      "division": 2,
+      "lp": 13,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     }
