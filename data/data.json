@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T06:05:15.737493Z",
+  "lastUpdated": "2026-08-14T06:07:28.581019Z",
   "players": [
     {
       "time": null,
@@ -750,6 +750,24 @@
       "wins": 0,
       "losses": 1,
       "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "binky#5ft8",
+      "profileIconId": 7191,
+      "tier": "Emerald",
+      "division": 4,
+      "lp": 56,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
