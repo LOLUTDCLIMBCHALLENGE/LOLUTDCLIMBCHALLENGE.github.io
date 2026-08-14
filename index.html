@@ -418,7 +418,7 @@
             <div class="placement">#${index + 1}</div>
             ${profileImg(p)}
             <div class="info">
-              <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}${p.isStudent ? '<span class="student-tag">STUDENT</span>' : ''}${p.isAlumni ? '<span class="alumni-tag">ALUMNI</span>' : ''}${p.isFriend ? '<span class="friend-tag">FRIEND</span>' : ''}</div>
+              <div class="name">${p.riotId}${p.isStudent ? '<span class="student-tag">STUDENT</span>' : ''}${p.isAlumni ? '<span class="alumni-tag">ALUMNI</span>' : ''}${p.isFriend ? '<span class="friend-tag">FRIEND</span>' : ''}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}</div>
               ${p.reachedMaster ? `<div class="penalty-note">${getAdjustmentLabel(p)}</div>` : ''}
             </div>
