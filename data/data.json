@@ -282,9 +282,9 @@
       "wins": 1,
       "losses": 1,
       "reachedMaster": true,
-      "startedDiamond": false,
+      "startedDiamond": true,
       "startedEmerald": false,
-      "decayedFromGM": true,
+      "decayedFromGM": false,
       "isStudent": true,
       "isAlumni": false,
       "isFriend": false
