@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>LOLUTD CLIMB CHALLENGE</title>
+<title>CLIMB CHALLENGE</title>
 <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
 <style>
   html, body {
@@ -26,6 +26,11 @@
     flex-direction: column;
     align-items: center;
   }
+  .gif-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
   img {
     max-width: 300px;
     margin-top: -20px;
@@ -35,14 +40,18 @@
 <body>
   <div class="container">
     <p>ayy chill bruh im workin on it damn!!</p>
-    <img src="https://static2.klipy.com/ii/4493325008d34b7bf8cd6813cd5c1619/93/42/qlocwRcEWmB87zj.gif" alt="Working on it">
+    <div class="gif-row">
+      <!-- Fill in the src="" path below with your local gif -->
+      <img src="images/arrow.gif" alt="Arrow">
+      <img src="https://static2.klipy.com/ii/4493325008d34b7bf8cd6813cd5c1619/93/42/qlocwRcEWmB87zj.gif" alt="Working on it">
+    </div>
   </div>
 
   <!-- Local audio tracks: fill in the src="" paths below, e.g. src="audio/track1.mp3" -->
-  <audio id="audio1" src="audio/constructionNoise.mp3" loop></audio>
-  <audio id="audio2" src="audio/lowBitrateInsrumental.mp3" loop></audio>
-  <audio id="audio3" src="audio/peopleTalking.mp3" loop></audio>
-  <audio id="audio4" src="audio/zombiePaper.mp3" loop></audio>
+  <audio id="audio1" src="audio/zombiePaper.mp3" loop></audio>
+  <audio id="audio2" src="audio/peopleTalking.mp3" loop></audio>
+  <audio id="audio3" src="audio/lowBitrateInsrumental.mp3" loop></audio>
+  <audio id="audio4" src="audio/constructionNoise.mp3" loop></audio>
 
   <script>
     const tracks = [
@@ -51,6 +60,12 @@
       document.getElementById('audio3'),
       document.getElementById('audio4'),
     ];
+
+    // Set individual volume for each track here, 0.0 (silent) to 1.0 (full volume)
+    tracks[0].volume = .8;  // audio1 - zombiePaper
+    tracks[1].volume = .8;  // audio2 - peopleTalking
+    tracks[2].volume = .4;  // audio3 - lowBitrateInstrumental
+    tracks[3].volume = 1;  // audio4 - constructionNoise
 
     let started = false;
 
