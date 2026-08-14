@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOLUTD CLIMB CHALLENGE</title>
+<title>CLIMB CHALLENGE</title>
+<link rel="icon" type="image/png" href="images/websiteIcon.png">
+<link rel="apple-touch-icon" href="images/websiteIcon.png">
 <style>
   :root {
     --bg: #05070d;
@@ -171,11 +173,6 @@
     flex-shrink: 0;
   }
 
-  .master-tag {
-    color: var(--purple);
-    border: 1px solid var(--purple);
-  }
-
   .student-tag {
     color: var(--student-green);
     border: 1px solid var(--student-green);
@@ -189,6 +186,11 @@
   .friend-tag {
     color: var(--friend-yellow);
     border: 1px solid var(--friend-yellow);
+  }
+
+  .master-tag {
+    color: var(--purple);
+    border: 1px solid var(--purple);
   }
 
   .rank-line {
@@ -418,7 +420,7 @@
             <div class="placement">#${index + 1}</div>
             ${profileImg(p)}
             <div class="info">
-              <div class="name">${p.riotId}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}${p.isStudent ? '<span class="student-tag">STUDENT</span>' : ''}${p.isAlumni ? '<span class="alumni-tag">ALUMNI</span>' : ''}${p.isFriend ? '<span class="friend-tag">FRIEND</span>' : ''}</div>
+              <div class="name">${p.riotId}${p.isStudent ? '<span class="student-tag">STUDENT</span>' : ''}${p.isAlumni ? '<span class="alumni-tag">ALUMNI</span>' : ''}${p.isFriend ? '<span class="friend-tag">FRIEND</span>' : ''}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}</div>
               ${p.reachedMaster ? `<div class="penalty-note">${getAdjustmentLabel(p)}</div>` : ''}
             </div>
