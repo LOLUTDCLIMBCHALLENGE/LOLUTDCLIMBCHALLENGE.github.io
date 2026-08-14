@@ -382,7 +382,12 @@
   const STARTED_EMERALD_EFFECTIVENESS = 0.5;
   const STARTED_DIAMOND_EFFECTIVENESS = 0.6;
 
+  // Manual, per-player penalty applied independently of the Master+ decay system.
+  // Set via the `manualPenalty` field in data.json (a 0-1 multiplier). Shown on
+  // the leaderboard as a "Reduced Gains" note, same as Master+ adjustments,
+  // but does NOT add the MASTER+ tag since the player may not be Master+.
   function getEffectiveness(p) {
+    if (p.manualPenalty != null) return p.manualPenalty;
     if (!p.reachedMaster) return 1;
     if (p.decayedFromGM) return DECAYED_FROM_GM_EFFECTIVENESS;
     if (p.startedEmerald) return STARTED_EMERALD_EFFECTIVENESS;
@@ -395,10 +400,19 @@
   // multiplier actually applied — except the plain-Master+ default, which is
   // shown as a clean 33% (the real multiplier stays 0.66, this is display-only).
   function getAdjustmentLabel(p) {
+    if (p.manualPenalty != null) {
+      return `${Math.round((1 - p.manualPenalty) * 100)}% Reduced Gains`;
+    }
     if (!p.reachedMaster) return "";
     const isDefaultMasterOnly = !p.decayedFromGM && !p.startedEmerald && !p.startedDiamond;
     const reductionPct = isDefaultMasterOnly ? 33 : Math.round((1 - getEffectiveness(p)) * 100);
     return `${reductionPct}% Reduced Gains`;
+  }
+
+  // Shows the note whenever there's an active adjustment - Master+ decay OR
+  // a manual penalty - so manually-penalized non-Master+ players still see it.
+  function hasAdjustmentNote(p) {
+    return p.manualPenalty != null || p.reachedMaster;
   }
 
   // Builds an op.gg summoner profile link from a "Name#Tag" riot ID.
@@ -449,7 +463,7 @@
             <div class="info">
               <div class="name">${p.riotId}${p.isStudent ? '<span class="student-tag">STUDENT</span>' : ''}${p.isAlumni ? '<span class="alumni-tag">ALUMNI</span>' : ''}${p.isFriend ? '<span class="friend-tag">FRIEND</span>' : ''}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
               <div class="rank-line">${formatRank(p)}${opggLink(p.riotId)}</div>
-              ${p.reachedMaster ? `<div class="penalty-note">${getAdjustmentLabel(p)}</div>` : ''}
+              ${hasAdjustmentNote(p) ? `<div class="penalty-note">${getAdjustmentLabel(p)}</div>` : ''}
             </div>
             <div class="stats">
               ${rankIconImg(p.tier)}
