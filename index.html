@@ -203,6 +203,16 @@
     margin-top: 4px;
   }
 
+  .opgg-link {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .opgg-link:hover {
+    text-decoration: underline;
+  }
+
   .rank-icon-wrap {
     width: 102px;
     height: 102px;
@@ -385,6 +395,14 @@
     return `${reductionPct}% Reduced Gains`;
   }
 
+  // Builds an op.gg summoner profile link from a "Name#Tag" riot ID.
+  // e.g. "Bones#casts" -> https://op.gg/lol/summoners/na/Bones-casts
+  function opggUrl(riotId, region = "na") {
+    const [name, tag] = riotId.split("#");
+    if (!name || !tag) return null;
+    return `https://op.gg/lol/summoners/${region}/${encodeURIComponent(name)}-${encodeURIComponent(tag)}`;
+  }
+
   // Community Dragon serves the full profile icon set (more complete than Data Dragon)
   function profileIconUrl(id) {
     return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${id}.jpg`;
@@ -424,7 +442,7 @@
             ${profileImg(p)}
             <div class="info">
               <div class="name">${p.riotId}${p.isStudent ? '<span class="student-tag">STUDENT</span>' : ''}${p.isAlumni ? '<span class="alumni-tag">ALUMNI</span>' : ''}${p.isFriend ? '<span class="friend-tag">FRIEND</span>' : ''}${p.reachedMaster ? '<span class="master-tag">MASTER+</span>' : ''}</div>
-              <div class="rank-line">${formatRank(p)}</div>
+              <div class="rank-line">${formatRank(p)}${opggLink(p.riotId)}</div>
               ${p.reachedMaster ? `<div class="penalty-note">${getAdjustmentLabel(p)}</div>` : ''}
             </div>
             <div class="stats">
@@ -469,6 +487,12 @@
   function rankIconImg(tier) {
     const url = tierImages[tier] || "";
     return `<div class="rank-icon-wrap"><img class="rank-icon" src="${url}" alt="${tier}" /></div>`;
+  }
+
+  function opggLink(riotId) {
+    const url = opggUrl(riotId);
+    if (!url) return "";
+    return ` | <a class="opgg-link" href="${url}" target="_blank" rel="noopener noreferrer">OP.GG</a>`;
   }
 
   const NO_DIVISION_TIERS = ["Master", "Grandmaster", "Challenger"];
