@@ -26,6 +26,7 @@
     --friend-yellow: #f0d030;
     --alumni-orange: #f0a030;
     --student-green: #3ec95f;
+    --blue: #4d9dff;
   }
 
   * { box-sizing: border-box; }
@@ -205,12 +206,16 @@
 
   .opgg-link {
     color: var(--blue);
-    text-decoration: none;
-    font-weight: 500;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
+  .opgg-link:visited {
+    color: var(--blue);
   }
 
   .opgg-link:hover {
-    text-decoration: underline;
+    color: #7ab8ff;
   }
 
   .rank-icon-wrap {
