@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-13T21:28:42.876649Z",
+  "lastUpdated": "2026-08-14T00:03:21.095993Z",
   "players": [
     {
       "time": null,
@@ -42,10 +42,10 @@
       "riotId": "Bones#casts",
       "profileIconId": 6623,
       "tier": "Diamond",
-      "division": 3,
-      "lp": 74,
-      "lpGained": 8,
-      "wins": 19,
+      "division": 2,
+      "lp": 14,
+      "lpGained": 48,
+      "wins": 21,
       "losses": 18,
       "reachedMaster": true,
       "startedDiamond": true,
