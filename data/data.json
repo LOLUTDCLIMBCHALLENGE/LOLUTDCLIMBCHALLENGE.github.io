@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T19:41:51.680060Z",
+  "lastUpdated": "2026-08-15T19:49:07.455076Z",
   "players": [
     {
       "time": null,
@@ -79,9 +79,9 @@
       "profileIconId": 6623,
       "tier": "Diamond",
       "division": 2,
-      "lp": 76,
-      "lpGained": 62,
-      "wins": 4,
+      "lp": 97,
+      "lpGained": 83,
+      "wins": 5,
       "losses": 1,
       "reachedMaster": true,
       "startedDiamond": true,
@@ -862,6 +862,24 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "Helperz#NA1",
+      "profileIconId": 23,
+      "tier": "Grandmaster",
+      "division": 1,
+      "lp": 1191,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": true,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     }
