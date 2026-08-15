@@ -827,7 +827,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -843,7 +843,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     }
