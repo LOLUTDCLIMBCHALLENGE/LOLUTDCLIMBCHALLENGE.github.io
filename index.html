@@ -86,6 +86,42 @@
     font-size: 24px;
   }
 
+  .summary-bar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 32px;
+  }
+
+  .summary-stat {
+    text-align: center;
+  }
+
+  .summary-value {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .summary-value.positive { color: var(--green); }
+  .summary-value.negative { color: var(--red); }
+
+  .summary-label {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .last-updated {
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
   .board {
     display: flex;
     flex-direction: column;
@@ -305,6 +341,19 @@
       font-size: 16px;
     }
 
+    .summary-bar {
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    .summary-value {
+      font-size: 22px;
+    }
+
+    .summary-label {
+      font-size: 11px;
+    }
+
     .row {
       flex-wrap: wrap;
       border-radius: 24px;
@@ -363,9 +412,22 @@
       </div>
     </header>
 
+    <div class="summary-bar" id="summaryBar" style="display: none;">
+      <div class="summary-stat">
+        <div class="summary-value" id="totalGames">0</div>
+        <div class="summary-label">Total Games Played</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value" id="totalLp">0</div>
+        <div class="summary-label">Total LP Change</div>
+      </div>
+    </div>
+
+    <div class="last-updated" id="lastUpdatedTop" style="display: none;">Last updated: <span id="updated"></span></div>
+
     <div class="board" id="board"></div>
 
-    <footer>Last updated: <span id="updated"></span></footer>
+    <footer></footer>
   </div>
 
 <script>
@@ -458,6 +520,17 @@
           : rawGained;
       });
 
+      // Totals across all players, ignoring any Master+/manual reductions.
+      const totalGames = players.reduce((sum, p) => sum + p.wins + p.losses, 0);
+      const totalLpChange = players.reduce((sum, p) => sum + p.lpGained, 0);
+
+      const totalGamesEl = document.getElementById("totalGames");
+      const totalLpEl = document.getElementById("totalLp");
+      totalGamesEl.textContent = totalGames.toLocaleString();
+      totalLpEl.textContent = `${totalLpChange > 0 ? "+" : ""}${totalLpChange.toLocaleString()}`;
+      totalLpEl.classList.add(totalLpChange > 0 ? "positive" : (totalLpChange < 0 ? "negative" : ""));
+      document.getElementById("summaryBar").style.display = "flex";
+
       players
         .sort((a, b) => b.effectiveLp - a.effectiveLp)
         .forEach((p, index) => {
@@ -491,10 +564,18 @@
           board.appendChild(row);
         });
 
-      document.getElementById("updated").textContent = new Date(data.lastUpdated).toLocaleString();
+      document.getElementById("updated").textContent = new Date(data.lastUpdated).toLocaleString(undefined, {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+      });
+      document.getElementById("lastUpdatedTop").style.display = "block";
     })
     .catch(err => {
       console.error("Failed to load rank data:", err);
+      document.getElementById("lastUpdatedTop").style.display = "block";
       document.getElementById("updated").textContent = "Failed to load data";
     });
 
