@@ -89,7 +89,9 @@
   .summary-bar {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 48px;
     margin-bottom: 32px;
   }
 
@@ -342,7 +344,8 @@
     }
 
     .summary-bar {
-      gap: 32px;
+      column-gap: 28px;
+      row-gap: 16px;
       margin-bottom: 24px;
     }
 
@@ -421,6 +424,14 @@
         <div class="summary-value" id="totalLp">0</div>
         <div class="summary-label">Total LP Change</div>
       </div>
+      <div class="summary-stat">
+        <div class="summary-value" id="gamesPerHour">0</div>
+        <div class="summary-label">Games / Hour</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value" id="lpPerHour">0</div>
+        <div class="summary-label">LP / Hour</div>
+      </div>
     </div>
 
     <div class="last-updated" id="lastUpdatedTop" style="display: none;">Last updated: <span id="updated"></span></div>
@@ -449,6 +460,9 @@
   // for specific players. Shown on the leaderboard as a "Reduced Gains" note,
   // same as Master+ adjustments, but does NOT add the MASTER+ tag since the
   // player may not be Master+.
+  // Challenge start date — Aug 14, 2026, midnight Central US (CDT, UTC-5).
+  const START_DATE = "2026-08-14T05:00:00Z";
+
   const MANUAL_PENALTIES = {
     "SkyCerberus#Azure": 0.5,
   };
@@ -524,11 +538,25 @@
       const totalGames = players.reduce((sum, p) => sum + p.wins + p.losses, 0);
       const totalLpChange = players.reduce((sum, p) => sum + p.lpGained, 0);
 
+      // Elapsed hours between challenge start and the leaderboard's last-updated
+      // timestamp (not "now"), so rates match the data snapshot being shown.
+      const elapsedMs = new Date(data.lastUpdated) - new Date(START_DATE);
+      const elapsedHours = Math.max(elapsedMs / (1000 * 60 * 60), 0);
+      const gamesPerHour = elapsedHours > 0 ? totalGames / elapsedHours : 0;
+      const lpPerHour = elapsedHours > 0 ? totalLpChange / elapsedHours : 0;
+
       const totalGamesEl = document.getElementById("totalGames");
       const totalLpEl = document.getElementById("totalLp");
       totalGamesEl.textContent = totalGames.toLocaleString();
       totalLpEl.textContent = `${totalLpChange > 0 ? "+" : ""}${totalLpChange.toLocaleString()}`;
       totalLpEl.classList.add(totalLpChange > 0 ? "positive" : (totalLpChange < 0 ? "negative" : ""));
+
+      const gamesPerHourEl = document.getElementById("gamesPerHour");
+      const lpPerHourEl = document.getElementById("lpPerHour");
+      gamesPerHourEl.textContent = gamesPerHour.toFixed(1);
+      lpPerHourEl.textContent = `${lpPerHour > 0 ? "+" : ""}${lpPerHour.toFixed(1)}`;
+      lpPerHourEl.classList.add(lpPerHour > 0 ? "positive" : (lpPerHour < 0 ? "negative" : ""));
+
       document.getElementById("summaryBar").style.display = "flex";
 
       players
