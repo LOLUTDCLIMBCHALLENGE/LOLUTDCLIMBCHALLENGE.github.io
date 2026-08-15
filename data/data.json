@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T15:40:58.482606Z",
+  "lastUpdated": "2026-08-15T16:52:42.146467Z",
   "players": [
     {
       "time": null,
@@ -730,7 +730,7 @@
       "lp": 9,
       "lpGained": 4,
       "wins": 2,
-      "losses": 2,
+      "losses": 3,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
