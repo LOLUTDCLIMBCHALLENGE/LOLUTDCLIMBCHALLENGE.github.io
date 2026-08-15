@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T07:37:07.660493Z",
+  "lastUpdated": "2026-08-15T07:56:18.523648Z",
   "players": [
     {
       "time": null,
@@ -510,10 +510,10 @@
       "riotId": "RellzOxo#Rellz",
       "profileIconId": 7188,
       "tier": "Gold",
-      "division": 2,
-      "lp": 86,
-      "lpGained": -4,
-      "wins": 2,
+      "division": 1,
+      "lp": 5,
+      "lpGained": 15,
+      "wins": 3,
       "losses": 2,
       "reachedMaster": false,
       "startedDiamond": false,
