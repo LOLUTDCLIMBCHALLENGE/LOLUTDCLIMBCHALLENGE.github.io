@@ -428,10 +428,6 @@
         <div class="summary-value" id="totalLp">0</div>
         <div class="summary-label">Total LP Change</div>
       </div>
-      <div class="summary-stat">
-        <div class="summary-value" id="lpPerHour">0</div>
-        <div class="summary-label">LP / Hour</div>
-      </div>
     </div>
 
     <div class="last-updated" id="lastUpdatedTop" style="display: none;">Last updated: <span id="updated"></span></div>
@@ -543,7 +539,6 @@
       const elapsedMs = new Date(data.lastUpdated) - new Date(START_DATE);
       const elapsedHours = Math.max(elapsedMs / (1000 * 60 * 60), 0);
       const gamesPerHour = elapsedHours > 0 ? totalGames / elapsedHours : 0;
-      const lpPerHour = elapsedHours > 0 ? totalLpChange / elapsedHours : 0;
 
       const totalGamesEl = document.getElementById("totalGames");
       const totalLpEl = document.getElementById("totalLp");
@@ -552,10 +547,7 @@
       totalLpEl.classList.add(totalLpChange > 0 ? "positive" : (totalLpChange < 0 ? "negative" : ""));
 
       const gamesPerHourEl = document.getElementById("gamesPerHour");
-      const lpPerHourEl = document.getElementById("lpPerHour");
       gamesPerHourEl.textContent = gamesPerHour.toFixed(1);
-      lpPerHourEl.textContent = `${lpPerHour > 0 ? "+" : ""}${lpPerHour.toFixed(1)}`;
-      lpPerHourEl.classList.add(lpPerHour > 0 ? "positive" : (lpPerHour < 0 ? "negative" : ""));
 
       document.getElementById("summaryBar").style.display = "flex";
 
