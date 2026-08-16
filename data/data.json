@@ -881,7 +881,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     }
   ]
 }
