@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-16T06:33:15.407776Z",
+  "lastUpdated": "2026-08-16T06:35:49.577181Z",
   "players": [
     {
       "time": null,
@@ -862,6 +862,24 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "stupid cheesecat#emma",
+      "profileIconId": 7143,
+      "tier": "Emerald",
+      "division": 2,
+      "lp": 60,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     }
