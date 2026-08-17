@@ -897,7 +897,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     }
