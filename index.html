@@ -31,6 +31,44 @@
 
   * { box-sizing: border-box; }
 
+  .slide-gif-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+    /* Hidden by default; JS adds .active only ~5% of the time */
+    display: none;
+  }
+
+  .slide-gif-overlay.active {
+    display: block;
+  }
+
+  .slide-gif {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(0, -50%);
+    width: 300px;
+    height: 300px;
+    animation: slideGifAcross 0.8s ease-out forwards,
+               slideGifFadeOut 0.5s ease-in 1.2s forwards;
+  }
+
+  @keyframes slideGifAcross {
+    from { left: 100%; }
+    to   { left: -770px; } /* slide fully off the left edge (width + buffer) */
+  }
+
+  @keyframes slideGifFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
   body {
     margin: 0;
     min-height: 100vh;
@@ -402,6 +440,11 @@
 </style>
 </head>
 <body>
+  <div class="slide-gif-overlay" id="slideGifOverlay">
+    <!-- PUT YOUR GIF PATH HERE -->
+    <img class="slide-gif" src="images/skeleton.gif" alt="">
+  </div>
+
   <div class="page">
     <header>
       <div class="header-inner">
@@ -438,6 +481,14 @@
   </div>
 
 <script>
+  // ---- Slide-in gif: only fires ~5% of the time on page load ----
+  (function () {
+    const SLIDE_GIF_CHANCE = 0.05; // 5%
+    if (Math.random() < SLIDE_GIF_CHANCE) {
+      document.getElementById("slideGifOverlay").classList.add("active");
+    }
+  })();
+
   // Players who have reached Master+ at any point during the challenge have their
   // total points counted at reduced effectiveness for leaderboard purposes.
   // The exact reduction depends on manual flags set by hand in data.json:
