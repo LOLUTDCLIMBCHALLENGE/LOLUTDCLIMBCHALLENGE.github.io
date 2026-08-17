@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T02:22:50.990220Z",
+  "lastUpdated": "2026-08-17T02:30:05.176600Z",
   "players": [
     {
       "time": null,
@@ -882,6 +882,24 @@
       "isStudent": false,
       "isAlumni": false,
       "isFriend": true
+    },
+    {
+      "time": null,
+      "riotId": "angel devil#meow",
+      "profileIconId": 7195,
+      "tier": "Platinum",
+      "division": 4,
+      "lp": 17,
+      "lpGained": 60,
+      "wins": 3,
+      "losses": 3,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     }
   ]
 }
