@@ -883,23 +883,5 @@
       "isAlumni": false,
       "isFriend": true
     },
-    {
-      "time": null,
-      "riotId": "angel devil#meow",
-      "profileIconId": 7195,
-      "tier": "Platinum",
-      "division": 2,
-      "lp": 1,
-      "lpGained": 244,
-      "wins": 10,
-      "losses": 6,
-      "reachedMaster": false,
-      "startedDiamond": false,
-      "startedEmerald": false,
-      "decayedFromGM": false,
-      "isStudent": true,
-      "isAlumni": false,
-      "isFriend": false
-    }
   ]
 }
