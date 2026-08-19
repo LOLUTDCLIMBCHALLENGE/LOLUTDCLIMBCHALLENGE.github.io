@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T19:49:51.205685Z",
+  "lastUpdated": "2026-08-19T21:55:30.680374Z",
   "players": [
     {
       "time": null,
@@ -29,11 +29,11 @@
       "lpGained": -91,
       "wins": 3,
       "losses": 8,
-      "reachedMaster": true,
+      "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -53,7 +53,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
+      "isFriend": false
     },
     {
       "time": null,
@@ -65,11 +65,11 @@
       "lpGained": 25,
       "wins": 16,
       "losses": 15,
-      "reachedMaster": true,
+      "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -83,12 +83,12 @@
       "lpGained": 24,
       "wins": 16,
       "losses": 16,
-      "reachedMaster": true,
-      "startedDiamond": true,
+      "reachedMaster": false,
+      "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": true,
+      "isAlumni": false,
       "isFriend": false
     },
     {
@@ -105,7 +105,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -123,7 +123,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -142,7 +142,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": true,
+      "isAlumni": false,
       "isFriend": false
     },
     {
@@ -159,7 +159,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -177,7 +177,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -195,7 +195,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -209,11 +209,11 @@
       "lpGained": 90,
       "wins": 5,
       "losses": 6,
-      "reachedMaster": true,
+      "reachedMaster": false,
       "startedDiamond": false,
-      "startedEmerald": true,
+      "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -233,7 +233,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
+      "isFriend": false
     },
     {
       "time": null,
@@ -248,8 +248,8 @@
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": true,
-      "isStudent": true,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -267,7 +267,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -282,10 +282,10 @@
       "wins": 10,
       "losses": 8,
       "reachedMaster": true,
-      "startedDiamond": true,
+      "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -295,15 +295,15 @@
       "profileIconId": 7167,
       "tier": "Platinum",
       "division": 4,
-      "lp": 67,
-      "lpGained": -30,
-      "wins": 18,
-      "losses": 19,
+      "lp": 44,
+      "lpGained": -53,
+      "wins": 19,
+      "losses": 21,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -321,7 +321,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -339,7 +339,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -357,7 +357,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -367,15 +367,15 @@
       "profileIconId": 6762,
       "tier": "Platinum",
       "division": 1,
-      "lp": 99,
-      "lpGained": 56,
+      "lp": 79,
+      "lpGained": 36,
       "wins": 6,
-      "losses": 3,
+      "losses": 4,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -393,7 +393,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -411,7 +411,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -431,7 +431,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
+      "isFriend": false
     },
     {
       "time": null,
@@ -447,7 +447,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -466,7 +466,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": true,
+      "isAlumni": false,
       "isFriend": false
     },
     {
@@ -483,7 +483,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -501,7 +501,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -520,7 +520,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": true,
+      "isAlumni": false,
       "isFriend": false
     },
     {
@@ -533,11 +533,11 @@
       "lpGained": 0,
       "wins": 0,
       "losses": 0,
-      "reachedMaster": true,
-      "startedDiamond": true,
+      "reachedMaster": false,
+      "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -556,7 +556,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": true,
+      "isAlumni": false,
       "isFriend": false
     },
     {
@@ -573,7 +573,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -591,7 +591,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -609,7 +609,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -627,7 +627,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -645,7 +645,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -663,7 +663,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -683,7 +683,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
+      "isFriend": false
     },
     {
       "time": null,
@@ -699,7 +699,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -709,16 +709,16 @@
       "profileIconId": 6916,
       "tier": "Master",
       "division": 1,
-      "lp": 315,
-      "lpGained": 151,
-      "wins": 6,
+      "lp": 349,
+      "lpGained": 185,
+      "wins": 7,
       "losses": 2,
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": true,
+      "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": true,
+      "isAlumni": false,
       "isFriend": false
     },
     {
@@ -737,7 +737,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
+      "isFriend": false
     },
     {
       "time": null,
@@ -753,7 +753,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -763,15 +763,15 @@
       "profileIconId": 1157,
       "tier": "Emerald",
       "division": 4,
-      "lp": 10,
-      "lpGained": -46,
-      "wins": 2,
+      "lp": 29,
+      "lpGained": -27,
+      "wins": 3,
       "losses": 4,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -789,7 +789,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -807,7 +807,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -827,23 +827,23 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
+      "isFriend": false
     },
     {
       "time": null,
       "riotId": "onetrickponyshen#ttv",
       "profileIconId": 5213,
       "tier": "Emerald",
-      "division": 3,
-      "lp": 85,
-      "lpGained": -41,
-      "wins": 11,
-      "losses": 14,
+      "division": 2,
+      "lp": 4,
+      "lpGained": -22,
+      "wins": 12,
+      "losses": 15,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -861,7 +861,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": true,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     },
@@ -881,7 +881,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": true
-    },
+      "isFriend": false
+    }
   ]
 }
