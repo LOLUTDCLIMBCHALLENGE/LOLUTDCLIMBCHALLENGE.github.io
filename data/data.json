@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T16:17:29.781182Z",
+  "lastUpdated": "2026-08-20T16:33:28.365255Z",
   "players": [
     {
       "time": null,
@@ -836,7 +836,7 @@
       "tier": "Diamond",
       "division": 4,
       "lp": 19,
-      "lpGained": 193,
+      "lpGained": 19,
       "wins": 25,
       "losses": 17,
       "reachedMaster": false,
