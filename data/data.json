@@ -33,7 +33,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -53,7 +53,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -65,11 +65,11 @@
       "lpGained": 14,
       "wins": 20,
       "losses": 19,
-      "reachedMaster": false,
+      "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -105,7 +105,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -123,7 +123,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -142,7 +142,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
@@ -159,7 +159,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -177,7 +177,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -195,7 +195,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -211,9 +211,9 @@
       "losses": 9,
       "reachedMaster": false,
       "startedDiamond": false,
-      "startedEmerald": false,
+      "startedEmerald": true,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -233,7 +233,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -246,10 +246,10 @@
       "wins": 3,
       "losses": 3,
       "reachedMaster": true,
-      "startedDiamond": false,
+      "startedDiamond": true,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -267,7 +267,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -282,10 +282,10 @@
       "wins": 10,
       "losses": 8,
       "reachedMaster": true,
-      "startedDiamond": false,
+      "startedDiamond": true,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -303,7 +303,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -321,7 +321,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -339,7 +339,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -357,7 +357,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -375,7 +375,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -393,7 +393,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -411,7 +411,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -431,7 +431,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -447,7 +447,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -466,7 +466,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
@@ -483,7 +483,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -501,7 +501,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -520,7 +520,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
@@ -533,11 +533,11 @@
       "lpGained": 0,
       "wins": 0,
       "losses": 0,
-      "reachedMaster": false,
-      "startedDiamond": false,
+      "reachedMaster": true,
+      "startedDiamond": true,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -556,7 +556,7 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
@@ -573,7 +573,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -591,7 +591,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -609,7 +609,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -627,7 +627,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -645,7 +645,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -663,7 +663,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -683,7 +683,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -699,7 +699,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -716,9 +716,9 @@
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
-      "decayedFromGM": false,
+      "decayedFromGM": true,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
@@ -737,7 +737,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -753,7 +753,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -771,7 +771,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -789,7 +789,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -807,7 +807,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -827,7 +827,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     },
     {
       "time": null,
@@ -843,7 +843,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -861,7 +861,7 @@
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     },
@@ -881,7 +881,7 @@
       "decayedFromGM": false,
       "isStudent": false,
       "isAlumni": false,
-      "isFriend": false
+      "isFriend": true
     }
   ]
 }
