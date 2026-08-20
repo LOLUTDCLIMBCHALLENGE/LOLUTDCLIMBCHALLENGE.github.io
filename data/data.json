@@ -83,12 +83,12 @@
       "lpGained": 3,
       "wins": 16,
       "losses": 17,
-      "reachedMaster": false,
+      "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": false,
-      "isAlumni": false,
+      "isAlumni": true,
       "isFriend": false
     },
     {
