@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-24T22:09:59.957729Z",
+  "lastUpdated": "2026-08-24T22:14:07.735566Z",
   "players": [
     {
       "time": null,
@@ -525,24 +525,6 @@
     },
     {
       "time": null,
-      "riotId": "shanque#ysy",
-      "profileIconId": 4553,
-      "tier": "Diamond",
-      "division": 3,
-      "lp": 93,
-      "lpGained": 0,
-      "wins": 0,
-      "losses": 0,
-      "reachedMaster": true,
-      "startedDiamond": true,
-      "startedEmerald": false,
-      "decayedFromGM": false,
-      "isStudent": true,
-      "isAlumni": false,
-      "isFriend": false
-    },
-    {
-      "time": null,
       "riotId": "SkyCerberus#Azure",
       "profileIconId": 7119,
       "tier": "Platinum",
@@ -904,13 +886,13 @@
     {
       "time": null,
       "riotId": "Jeydin21#2025",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -967,
-      "wins": -204,
-      "losses": -219,
+      "profileIconId": 4649,
+      "tier": "Silver",
+      "division": 3,
+      "lp": 67,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
