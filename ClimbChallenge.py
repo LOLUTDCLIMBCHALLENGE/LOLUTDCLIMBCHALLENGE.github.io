@@ -13,6 +13,43 @@ if not api_key:
 
 headers = {"X-Riot-Token": api_key}
 
+# Minimum gap between any two outbound Riot API requests. Personal API keys
+# are limited to 100 requests / 2 minutes (≈0.83 req/s sustained) as well as
+# 20 requests/second. We throttle EVERY request (not just once per player)
+# to stay comfortably under the 2-minute budget: 1.3s/request ≈ 0.77 req/s.
+REQUEST_INTERVAL_SECONDS = 1.3
+
+
+def riot_get(url, max_retries=5):
+    """GET a Riot API URL, throttling every call and retrying on 429/5xx
+    instead of silently giving up. Returns the Response object (which may
+    still be a non-200 after exhausting retries — callers still check
+    status_code)."""
+    for attempt in range(max_retries):
+        resp = requests.get(url, headers=headers)
+        time.sleep(REQUEST_INTERVAL_SECONDS)
+
+        if resp.status_code == 429:
+            # Riot tells us exactly how long to wait via Retry-After.
+            # Add a small buffer since clocks/timing aren't perfectly aligned.
+            retry_after = float(resp.headers.get("Retry-After", 2))
+            print(f"  Rate limited, waiting {retry_after + 0.5:.1f}s "
+                  f"(attempt {attempt + 1}/{max_retries})...")
+            time.sleep(retry_after + 0.5)
+            continue
+
+        if resp.status_code >= 500:
+            # Transient server-side error — brief backoff and retry.
+            wait = 2 * (attempt + 1)
+            print(f"  Server error {resp.status_code}, retrying in {wait}s...")
+            time.sleep(wait)
+            continue
+
+        return resp
+
+    return resp  # exhausted retries; caller will log/handle the final status
+
+
 # base urls for Riot API endpoints
 account_base = "https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/"
 league_base = "https://na1.api.riotgames.com/lol/league/v4/entries/by-puuid/"
@@ -85,6 +122,10 @@ class player:
         self.CurrentWins = 0
         self.CurrentLosses = 0
         self.iconID = 29
+        # True if this run couldn't reach Riot's API for this player at all
+        # (account/rank lookup failed) — distinct from "confirmed unranked",
+        # which is a successful API response that just has no ranked entry.
+        self.FetchFailed = False
 
 
 # Relative path — works both locally (run from repo root) and in GitHub Actions
@@ -128,24 +169,26 @@ MANUAL_ADJUSTMENT_FIELDS = [
 for user in players:
     username = user.Name
     # Step 1: Riot ID -> PUUID
-    acc_resp = requests.get(account_base + username, headers=headers)
+    acc_resp = riot_get(account_base + username)
     if acc_resp.status_code != 200:
         print(f"{username} -> Error fetching account: {acc_resp.status_code} {acc_resp.text}")
+        user.FetchFailed = True
         continue
 
     puuid = acc_resp.json()["puuid"]
 
     # Step 2: PUUID -> ranked entries
-    rank_resp = requests.get(league_base + puuid, headers=headers)
+    rank_resp = riot_get(league_base + puuid)
     if rank_resp.status_code != 200:
         print(f"{username} -> Error fetching rank: {rank_resp.status_code} {rank_resp.text}")
+        user.FetchFailed = True
         continue
 
     entries = rank_resp.json()
     solo_entry = next((e for e in entries if e["queueType"] == "RANKED_SOLO_5x5"), None)
 
     # Step 3: PUUID -> summoner data (for icon ID)
-    summ_resp = requests.get(summoner_base + puuid, headers=headers)
+    summ_resp = riot_get(summoner_base + puuid)
     if summ_resp.status_code != 200:
         print(f"{username} -> Error fetching icon: {summ_resp.status_code} {summ_resp.text}")
     else:
@@ -169,8 +212,6 @@ for user in players:
         print(f"{user.Name}: {user.CurrentRankValue - user.StartingRank} pts, "
               f"{user.CurrentWins - user.StartingWins}W/{user.CurrentLosses - user.StartingLosses}L")
 
-    time.sleep(1.2)
-
 
 # --- Build JSON output matching the shape index.html expects ---
 def player_to_dict(p):
@@ -184,6 +225,15 @@ def player_to_dict(p):
     riot_id_escaped = riot_id1[0] + "#" + riot_id1[1]
 
     prev = previous_player_data.get(riot_id_escaped, {})
+
+    # If this run failed to fetch data for the player (API error, exhausted
+    # retries, etc.) don't overwrite their last known-good stats with zeros —
+    # just carry forward whatever data.json already had. This is distinct
+    # from a *confirmed* unranked player, who should still show "Unranked".
+    if p.FetchFailed and prev:
+        carried = dict(prev)
+        carried["time"] = None
+        return carried
 
     reached_master_now = p.CurrentRankTier.upper() in MASTER_PLUS_TIERS if p.CurrentRankTier else False
     reached_master_ever = prev.get("reachedMaster", False) or reached_master_now
