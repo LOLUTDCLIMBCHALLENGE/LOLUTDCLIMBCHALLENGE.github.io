@@ -903,24 +903,6 @@
     },
     {
       "time": null,
-      "riotId": "Jeydin21#2025",
-      "profileIconId": 29,
-      "tier": "Unranked",
-      "division": 0,
-      "lp": 0,
-      "lpGained": -967,
-      "wins": -204,
-      "losses": -219,
-      "reachedMaster": false,
-      "startedDiamond": false,
-      "startedEmerald": false,
-      "decayedFromGM": false,
-      "isStudent": true,
-      "isAlumni": false,
-      "isFriend": false
-    },
-    {
-      "time": null,
       "riotId": "CarlosCrunch#SNACC",
       "profileIconId": 29,
       "tier": "Unranked",
@@ -930,10 +912,10 @@
       "wins": -122,
       "losses": -136,
       "reachedMaster": false,
-      "startedDiamond": false,
+      "startedDiamond": true,
       "startedEmerald": false,
       "decayedFromGM": false,
-      "isStudent": false,
+      "isStudent": true,
       "isAlumni": false,
       "isFriend": false
     }
