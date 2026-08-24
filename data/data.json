@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-24T18:02:57.915237Z",
+  "lastUpdated": "2026-08-24T18:56:48.918620Z",
   "players": [
     {
       "time": null,
@@ -115,10 +115,10 @@
       "profileIconId": 581,
       "tier": "Diamond",
       "division": 4,
-      "lp": 52,
-      "lpGained": -20,
+      "lp": 10,
+      "lpGained": -62,
       "wins": 34,
-      "losses": 35,
+      "losses": 37,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
@@ -900,6 +900,24 @@
       "isStudent": false,
       "isAlumni": false,
       "isFriend": true
+    },
+    {
+      "time": null,
+      "riotId": "Jeydin21#2025",
+      "profileIconId": 29,
+      "tier": "Unranked",
+      "division": 0,
+      "lp": 0,
+      "lpGained": -967,
+      "wins": -204,
+      "losses": -219,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
+      "isAlumni": false,
+      "isFriend": false
     }
   ]
 }
