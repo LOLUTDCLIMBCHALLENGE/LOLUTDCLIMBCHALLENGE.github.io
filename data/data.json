@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-24T18:56:48.918620Z",
+  "lastUpdated": "2026-08-24T19:25:11.653428Z",
   "players": [
     {
       "time": null,
@@ -115,9 +115,9 @@
       "profileIconId": 581,
       "tier": "Diamond",
       "division": 4,
-      "lp": 10,
-      "lpGained": -62,
-      "wins": 34,
+      "lp": 29,
+      "lpGained": -43,
+      "wins": 35,
       "losses": 37,
       "reachedMaster": false,
       "startedDiamond": false,
@@ -853,10 +853,10 @@
       "profileIconId": 939,
       "tier": "Emerald",
       "division": 4,
-      "lp": 54,
-      "lpGained": 0,
+      "lp": 33,
+      "lpGained": -21,
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
@@ -916,6 +916,24 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "CarlosCrunch#SNACC",
+      "profileIconId": 29,
+      "tier": "Unranked",
+      "division": 0,
+      "lp": 0,
+      "lpGained": -2739,
+      "wins": -122,
+      "losses": -136,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     }
