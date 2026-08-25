@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-25T18:27:07.932515Z",
+  "lastUpdated": "2026-08-25T18:52:24.569123Z",
   "players": [
     {
       "time": null,
@@ -169,10 +169,10 @@
       "profileIconId": 7084,
       "tier": "Emerald",
       "division": 4,
-      "lp": 60,
-      "lpGained": 1,
+      "lp": 46,
+      "lpGained": -13,
       "wins": 2,
-      "losses": 4,
+      "losses": 5,
       "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
@@ -934,6 +934,24 @@
       "startedEmerald": false,
       "decayedFromGM": false,
       "isStudent": true,
+      "isAlumni": false,
+      "isFriend": false
+    },
+    {
+      "time": null,
+      "riotId": "Jospinz#NA1",
+      "profileIconId": 6633,
+      "tier": "Emerald",
+      "division": 2,
+      "lp": 55,
+      "lpGained": 0,
+      "wins": 0,
+      "losses": 0,
+      "reachedMaster": false,
+      "startedDiamond": false,
+      "startedEmerald": false,
+      "decayedFromGM": false,
+      "isStudent": false,
       "isAlumni": false,
       "isFriend": false
     }
