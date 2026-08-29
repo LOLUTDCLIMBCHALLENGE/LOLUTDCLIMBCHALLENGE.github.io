@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-29T16:01:50.648816Z",
+  "lastUpdated": "2026-08-29T17:02:02.660276Z",
   "players": [
     {
       "time": null,
@@ -366,10 +366,10 @@
       "riotId": "monke123#deez",
       "profileIconId": 6762,
       "tier": "Emerald",
-      "division": 4,
-      "lp": 98,
-      "lpGained": 155,
-      "wins": 16,
+      "division": 3,
+      "lp": 18,
+      "lpGained": 175,
+      "wins": 17,
       "losses": 9,
       "reachedMaster": false,
       "startedDiamond": false,
