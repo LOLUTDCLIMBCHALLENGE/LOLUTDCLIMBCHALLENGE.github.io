@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-30T16:02:17.009322Z",
+  "lastUpdated": "2026-08-30T17:02:14.256810Z",
   "players": [
     {
       "time": null,
@@ -279,8 +279,8 @@
       "division": 1,
       "lp": 701,
       "lpGained": 280,
-      "wins": 20,
-      "losses": 14,
+      "wins": 21,
+      "losses": 15,
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
@@ -580,7 +580,7 @@
     {
       "time": null,
       "riotId": "SpeedyNS Zoe#Gwen",
-      "profileIconId": 5917,
+      "profileIconId": 7195,
       "tier": "Emerald",
       "division": 2,
       "lp": 35,
