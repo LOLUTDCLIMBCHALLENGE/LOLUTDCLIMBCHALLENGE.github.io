@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T15:02:18.316617Z",
+  "lastUpdated": "2026-08-31T16:02:10.998105Z",
   "players": [
     {
       "time": null,
@@ -871,10 +871,10 @@
       "profileIconId": 23,
       "tier": "Grandmaster",
       "division": 1,
-      "lp": 1476,
-      "lpGained": 285,
+      "lp": 1445,
+      "lpGained": 254,
       "wins": 15,
-      "losses": 6,
+      "losses": 7,
       "reachedMaster": true,
       "startedDiamond": false,
       "startedEmerald": false,
