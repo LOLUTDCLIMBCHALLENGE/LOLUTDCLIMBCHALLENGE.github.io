@@ -839,7 +839,7 @@
       "lpGained": 528,
       "wins": 91,
       "losses": 62,
-      "reachedMaster": true,
+      "reachedMaster": false,
       "startedDiamond": false,
       "startedEmerald": false,
       "decayedFromGM": false,
